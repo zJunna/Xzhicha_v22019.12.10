@@ -1,0 +1,160 @@
+/* 用户中心的头部 */
+
+.sr_user_container {
+	width: 100%;
+	background: rgba(255, 255, 255, .9);
+	height: 88px;
+	/*line-height: 88px;*/
+	padding: 20px;
+}
+
+.sr_user_container .user_header {
+	width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.userHeader_tip {
+	font-size: 14px;
+	font-weight: 400;
+	color: rgba(153, 153, 153, 1);
+	margin-left: 20px;
+}
+
+.userHeader_mid {
+	margin-left: 84px;
+	display: flex;
+}
+
+.userHeader_mid .userHeader_li.userHeaderOn a {
+	color: #616CFF;
+	font-weight: 500;
+}
+
+.userHeader_li {
+	margin-left: 60px;
+	cursor: pointer;
+}
+.userHeader_li a:hover{
+	color:#616CFF;
+}
+.userHeader_li:first-child {
+	margin-left: 0;
+}
+
+.userHeader_li a {
+	font-size: 16px;
+	font-weight: 400;
+	color: rgba(51, 51, 51, 1);
+}
+
+.head_portrait {
+	width: 44px;
+	height: 44px;
+	/*line-height: 44px;*/
+	border-radius: 50%;
+	background: #616CFF;
+	margin-left: 156px;
+	/*overflow: hidden;*/
+	position: relative;
+}
+
+.head_portrait .head_portrait_img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+
+/*登录后鼠标滑过头像*/
+
+.logo_hover_land {
+	width: 110px;
+	/*height: 110px;*/
+	border-radius: 4px;
+	position: absolute;
+	left: -40px;
+	padding-top: 20px;
+	display: none;
+	z-index: 999;
+}
+
+.each_land {
+	width: 110px;
+	height: auto;
+	padding: 11px 14px;
+	background: #FFFFFF;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.each_land img{
+	width: 16px;
+	height: 16px;
+}
+.each_land1 {
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+}
+
+.each_land3 {
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+.each_land {
+
+}
+
+.each_land p {
+	margin-left: 10px;
+	font-size: 14px;
+	font-weight: 400;
+	color: rgba(51, 51, 51, 1);
+}
+/*线上人力弹窗*/
+.online_pop{
+	z-index: 2;
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    } 
+.online_pop_box {
+    z-index: 3;
+    overflow: hidden;
+    width: 400px;
+    padding: 90px 0 40px;
+    border-radius: 10px;
+    background: #fff;
+}
+.online_pop_box p {
+    text-align: center;
+    font-size: 20px;
+    color: #363636;
+    margin-bottom: 60px;
+}
+.online_pop_box .online_pop_button {
+    overflow: hidden;
+    width: 145px;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid #6E3CFF;
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+    color: #FFFFFF;
+    background: #6E3CFF;
+    margin: auto;
+}

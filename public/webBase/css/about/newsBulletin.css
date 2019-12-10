@@ -1,0 +1,119 @@
+/*资讯中心*/
+.bg_color {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(rgba(38, 32, 83, 0.7), rgba(25, 25, 74, 0.7));
+}
+
+.news_placard_banner {
+	width: 100%;
+	height: 400px;
+	background: url(../../images/index/index_rz.png)no-repeat;
+	background-size: 100% 100%;
+}
+
+.news_placard_banner h3 {
+	padding-top: 137px;
+	font-size: 60px;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+	text-align: center;
+}
+
+.news_placard_banner p {
+	margin-top: 20px;
+	font-size: 20px;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+	text-align: center;
+}
+
+.information_content{
+	margin: 0 auto;
+	width: 1200px;
+	background: #ffffff;
+}
+.display_position{
+	display: flex;
+	align-items: center;
+	margin-top: 20px;
+}
+.cirle_icon{
+	width:13px;
+	height:13px;
+	border:2px solid rgba(97,108,255,1);
+	border-radius:50%;
+	background: #ffffff;
+	margin-top: 2px;
+}
+.written_words{
+	font-size:16px;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+	margin-left: 6px;
+}
+.information_list{
+	margin-top: 10px;
+}
+.information_list .layui-tab-content{
+	padding: 0;
+}
+.information_list_ul {
+	text-align: center;
+	border-bottom:2px solid rgba(204,204,204,1);
+}
+.information_list_ul li{
+	font-size:32px;
+	font-weight:bold;
+	color:rgba(102,102,102,1);
+	margin: 0 50px;
+}
+.information_content .layui-tab-brief>.layui-tab-title .layui-this{
+	color:rgba(97,108,255,1);
+}
+.information_list .layui-tab-title .layui-this:after,.information_list .layui-tab-title{
+	height: 62px;
+}
+.layui-tab-brief>.layui-tab-title .layui-this:after{
+	border-bottom:4px solid rgba(97,108,255,1);
+}
+.list_li_content{
+	margin-left: 66px;
+}
+.list_li_img img{
+	width:290px;
+	height:180px;
+}
+.list_li_content h5{
+	font-size:20px;
+	font-weight:400;
+	color:rgba(51,51,51,1);
+	cursor: pointer;
+}
+.data_and_look{
+	margin: 20px 0;
+}
+.data_and_look{
+	font-size:14px;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+}
+.Browse_times{
+	margin-left: 30px;
+}
+.introduce_words{
+	font-size:14px;
+	font-weight:400;
+	color:rgba(102,102,102,1);
+}
+.center_list_ul li{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 0;
+	border-bottom:1px solid #E4E4E4; 
+}
+.center_list_ul li:hover{
+	background:rgba(97,108,255,.05);
+	width: 100%;
+}

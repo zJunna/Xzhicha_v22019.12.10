@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="keywords" content="职场信用，职信，员工征信，职场征信查询" />
+		<meta name="description" content="X职查是一个职场信用共享与查询平台。在X职查平台企业可以把员工的守信和失信行为在系统里共享，也可以在雇佣前或雇佣中查询员工的职场征信。X职查是一个专业的区块链职业信用查询平台。" />
+		<meta name="author" content="sunrong" />
+		<meta name="renderer" content="webkit">
+		<title>X职查-用户中心</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../public/webBase/images/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="../../../public/webBase/layui/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="../../../public/webBase/public/kkpager/kkpager_blue.css" />
+		<link rel="stylesheet" type="text/css" href="../../../public/webBase/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="../../../public/webBase/css/user/userHeader.css">
+		<link rel="stylesheet" type="text/css" href="../../../public/webBase/css/user/userFooter.css">
+		<link rel="stylesheet" type="text/css" href="../../../public/webBase/css/user/userCenter.css">
+		<!--个人查询和企业查询列表样式用的是同一个-->
+		<link rel="stylesheet" type="text/css" href="../../../public/webBase/css/user/myAccount/myAccount.css" />
+		<link rel="stylesheet" type="text/css" href="../../../public/webBase/css/user/myQuery/myquery.css" />
+		<link rel="stylesheet" type="text/css" href="../../../public/webBase/public/kkpager/kkpager_blue.css" />
+		<script src="../../../public/webBase/public/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../public/webBase/public/template-web.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../public/webBase/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../public/webBase/config/api.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../public/webBase/js/base.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../public/webBase/public/kkpager/kkpager.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../../../public/webBase/public/kkpager/kkpager.min.js"></script>
+		<script src="../../../public/webBase/js/user/myQuery/myQuery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../public/webBase/js/user/myAccount/accountCenter.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="userCenter_container">
+			<!-- 引入用户中心的公共头部 -->
+			<div id="userHeader"></div>
+			<div class="individual_account_box cf layui-tab">
+				<!-- 用户中心-侧边栏部分 -->
+				<div id="userSide"></div>
+				<!-- 用户中心-个人资料部分 -->
+				<div class="layui-tab-content fl padding_0 account_right">
+					<!-- 用户中心的右侧 ——我的查询-->
+					<div class="layui-tab-item layui-show">
+						<div class="layui-tab layui-tab-brief margin_0" lay-filter="docDemoTabBrief">
+							<ul class="layui-tab-title account_choice">
+								<li class="account_choice_li">个人查询</li>
+								<li class="account_choice_li  layui-this">企业查询</li>
+							</ul>
+							<div class="layui-tab-content account_detail padding_0">
+								<!-- 引入我的查询 -->
+								<!--个人查询-->
+								<div class="layui-tab-item  white_background">
+									<div id="que_myQuery_people"></div>
+									<script id="que_myQuery_people_template" type="text/html">
+										<div class="que_query_list">
+											<!--que是query的自定义的缩写，意思是“询问”-->
+											<ul>
+												<!--{{if currency.length != 0}}
+														{{each currency}}
+														{{if $value.status==1}}
+															<li class="cf">
+																<a href="#">
+																	<div class="fl que_query_list_img">
+																		<img src="../../../public/webBase/images/user/girl80.png" />
+																	</div>
+																	<div class="fl que_query_list_name">
+																		{{$value.name}}
+																	</div>
+																	<div class="fl que_query_list_iDcard">
+																		{{$value.id_number}}
+																	</div>
+																	<div class="fr que_query_list_time">
+																		{{$value.time}}
+																	</div>
+																</a>
+															</li>
+														{{/if}}
+														{{/each}}
+													{{else}}
+														<div style="padding-top: 40px;color: #999;">暂无数据</div>
+													{{/if}}-->
+												<div style="color: #999;">暂无数据</div>
+											</ul>
+
+										</div>
+									</script>
+
+								</div>
+								<!-- 企业查询 -->
+								<div class="layui-tab-item white_background layui-show">
+									<div class="que_query_list">
+										<div id="que_myQuery_Co"></div>
+										<script id="que_myQuery_Co_template" type="text/html">
+											<!--que是query的自定义的缩写，意思是“询问”-->
+											<ul>
+												{{if currency.length != 0}}
+													{{each currency}} 
+														{{if $value.status==2}}
+															<li class="cf">
+																<a href="#">
+																	<div class="fl que_query_list_img">
+																		<img src="../../../public/webBase/images/user/com80.png" />
+																	</div>
+																	<div class="fl que_query_list_com">
+																		{{$value.name}}
+																	</div>
+																	<div class="fr que_query_list_time">
+																		{{$value.time}}
+																	</div>
+																</a>
+															</li>
+															
+														{{/if}}
+													{{/each}}
+													{{if page.totalCount>10 }}
+													<div id="kkpager"></div>
+													{{else}}
+													<div id="kkpager" style="display: none;"></div>
+													{{/if}}
+												{{else}}
+													<div style="color: #999;">暂无数据</div>
+												{{/if}}
+											</ul>
+										</script>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 引入用户中心的公共尾部 -->
+			<div id="userFooter"></div>
+		</div>
+		<script type="text/javascript">
+			//分页
+		</script>
+	</body>
+
+</html>

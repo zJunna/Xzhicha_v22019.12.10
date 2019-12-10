@@ -1,0 +1,65 @@
+<!-- 切换账户、个人 -->
+<link rel="stylesheet" href="../../../public/webBase/css/user/myAccount/personal_information.css">
+<script src="../../../public/webBase/js/user/myAccount/changePassword.js" type="text/javascript" charset="utf-8"></script>
+<div id="is_user_type"></div>
+<script id="is_user_type_template" type="text/html">
+	{{if identity_status == 0}}
+	<div class="switching_accounts">
+	    <div class="switching_wrap_left">
+	        <h4 class="sr_switch_user">当前为个人用户</h4>
+	        <div class="switching_service_tip">切换账户体验企业服务</div>
+	    </div>
+	    <div class="switching_wrap_right">
+	        <img src="../../../public/webBase/images/user/read.png" alt="">
+	    </div>
+	    <div class="switch_account_button">
+	        <button type="button" class="layui-btn binding_btn sr_first_btn">切换为企业用户</button>                                
+	        <button type="button" class="layui-btn binding_btn gray_btn" id="sr_return">返回账户中心</button>                                
+	    </div>
+	</div>
+	{{else}}
+	<!--企业用户-->
+	<div class="switching_accounts">
+	    <div class="switching_wrap_left">
+	        <h4 class="sr_switch_user">当前为企业用户</h4>
+	        <div class="switching_service_tip">切换账户体验个人服务</div>
+	    </div>
+	    <div class="switching_wrap_right">
+	        <img src="../../../public/webBase/images/user/company.png" alt="">
+	    </div>
+	    <div class="switch_account_button">
+	        <button type="button" class="layui-btn binding_btn sr_first_btn">切换为个人用户</button>                                
+	        <button type="button" class="layui-btn binding_btn gray_btn" id="sr_return">返回账户中心</button>                                
+	    </div>
+	</div>
+	{{/if}}
+</script>
+<script type="text/javascript">
+	$('#is_user_type').html(template('is_user_type_template', {
+		'identity_status': identity_status
+	}));
+	
+	//点击切换账户
+	change_type();
+	function change_type(){
+		$('.switch_account_button .sr_first_btn').click(function() {
+			var x_user_update = JSON.parse(localStorage.getItem('x_user')) || '';
+			if(identity_status == 0) {
+				identity_status = 1;
+				//侧边栏
+				$("#userSide").load("../templete/userSide.html");
+			} else {
+				identity_status = 0;
+				//侧边栏
+				$("#userSide").load("../templete/userSideCo.html");
+			}
+			//更新身份状态
+			x_user_update.identity_status = identity_status;
+			localStorage.setItem('x_user', JSON.stringify(x_user_update));
+			window.location.reload();
+		})
+	}
+	$('#sr_return').click(function(){
+		$('.account_choice_li').eq(0).click()
+	})
+</script>

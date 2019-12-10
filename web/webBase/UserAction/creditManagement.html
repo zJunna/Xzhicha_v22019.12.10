@@ -1,0 +1,57 @@
+<!--信用评估-->
+<script src="../../../public/webBase/public/echarts.min.js"></script>
+<script src="../../../public/webBase/js/base.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../public/webBase/js/user/myAccount/creditManagement.js" type="text/javascript" charset="utf-8"></script>
+<div class="credit_management">
+    <div class="credit_management_top">
+        <div class="credit_title">当前信誉度：<span></span></div>
+        <!--进度条-->
+        <div class="sr_press_credit">
+        	<ul class="tip_credit_write">
+				<li><span></span>一般</li>
+				<li><span></span>中等</li>
+				<li><span></span>良好</li>
+				<li><span></span>优秀</li>
+				<li><span></span>极好</li>
+			</ul>
+    		<div class="layui-progress">
+			  <div class="layui-progress-bar" lay-percent="40%"></div>
+			</div>
+			<ul class="tip_credit_num">
+				<li>0</li>
+				<li>20</li>
+				<li>40</li>
+				<li>60</li>
+				<li>80</li>
+				<li>100</li>
+			</ul>
+        </div>
+        <!--曲线图-->
+        <div class="sr_credit_managent">
+        	<div id="credit_line">
+        	</div>
+        </div>
+    </div>
+    <ul class="credit_management_bot">
+        <li class="credit_management_li">
+            <span class="credit_management_li_tip">个人信用</span>
+            <p class="tip_message">查询详细个人信用信息</p>
+            <button type="button" class="layui-btn binding_btn">去查询</button>
+        </li>
+        <li class="credit_management_li">
+            <span class="credit_management_li_tip">企业信用</span>
+            <p class="tip_message">查询详细企业信用信息</p>
+            <button type="button" class="layui-btn binding_btn">去查询</button>
+        </li>
+        <li class="credit_management_li">
+            <span class="credit_management_li_tip">行为风险评估</span>
+            <p class="tip_message">通过评估，获取风险测评报告</p>
+            <button type="button" class="layui-btn binding_btn" id="get_evaluate">去评估</button>
+        </li>
+        <li class="credit_management_li">
+            <span class="credit_management_li_tip">信用评估</span>
+            <p class="tip_message">对个人/企业进行信用评估</p>
+            <button type="button" class="layui-btn binding_btn gray_btn" id="sr_CreditEvaluation">已完成</button>
+        </li>
+    </ul>
+</div>

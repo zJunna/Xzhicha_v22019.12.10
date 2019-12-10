@@ -1,0 +1,155 @@
+.que_risk_assessment_box {
+	width: 100%;
+	height: auto;
+	background: #FFFFFF;
+}
+
+.que_risk_question {
+	padding: 60px 55px 0px 50px;
+}
+
+.que_risk_question h4 {
+	font-size: 20px;
+	font-weight: 500;
+	color: rgba(97, 108, 255, 1);
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.que_risk_question dl {
+	margin-top: 30px;
+}
+
+.que_risk_question dl:nth-of-type(1) {
+	margin-top: 0px;
+}
+
+.que_risk_question dl dt {
+	font-size: 16px;
+	font-weight: 400;
+	color: rgba(51, 51, 51, 1);
+	margin-bottom: 20px;
+}
+
+.que_risk_question dl dd {
+	padding-left: 20px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.que_risk_question dl dd span.que_text {
+	font-size: 16px;
+	font-weight: 400;
+	color: rgba(102, 102, 102, 1);
+	margin-left: 10px;
+}
+
+.que_risk_question_box dl dd .que_text_redeo {
+	display: block;
+	width: 16px;
+	height: 16px;
+	border: 1px solid rgba(153, 153, 153, 1);
+	border-radius: 50%;
+	margin-top: 3px;
+}
+
+.que_risk_question_box dl dd.que_on .que_text_redeo {
+	width: 16px;
+	height: 16px;
+	background: rgba(97, 108, 255, 1);
+	border-radius: 50%;
+}
+
+.que_risk_question_box dl dd.que_on .que_text_redeo {
+	border: none;
+}
+
+.que_risk_question_btn {
+	width: 130px;
+	height: 36px;
+	background: rgba(97, 108, 255, 1);
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 500;
+	color: rgba(242, 243, 244, 1);
+	text-align: center;
+	line-height: 36px;
+	margin: 60px auto;
+	cursor: pointer;
+}
+/*未完成测试题弹窗*/
+.que_risk_Pop_ups {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.1);
+	z-index: 9999999;
+	position: fixed;
+	left: 0;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.que_risk_Pop_ups_box {
+	overflow: hidden;
+	padding: 40px 60px 30px 60px;
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, 1);
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05);
+	border-radius: 10px;
+	text-align: center;
+	position: relative;
+}
+
+.que_risk_Pop_ups_box .que_img {
+	width: 52px;
+	height: 52px;
+	vertical-align: middle;
+	margin-bottom: 30px;
+}
+
+.que_risk_Pop_ups_box .que_risk_Pop_ups_txt {
+	font-size: 20px;
+	font-weight: 500;
+	color: rgba(51, 51, 51, 1);
+	line-height: 20px;
+}
+
+.que_risk_Pop_ups_box .que_not_answered {
+	font-size: 16px;
+	font-weight: 400;
+	color: rgba(102, 102, 102, 1);
+	line-height: 20px;
+	margin-top: 15px;
+}
+
+.que_risk_Pop_ups_box .que_not_answered span {
+	font-size: 16px;
+	font-weight: 400;
+	color: rgba(102, 102, 102, 1);
+	line-height: 20px;
+	margin-top: 15px
+}
+
+.que_risk_Pop_ups_box .que_risk_Pop_ups_btn {
+	width: 280px;
+	height: 40px;
+	background: rgba(97, 108, 255, 1);
+	font-size: 14px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 1);
+	line-height: 40px;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.que_risk_Pop_ups_box .que_risk_Pop_ups_del {
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}

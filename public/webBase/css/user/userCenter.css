@@ -1,0 +1,237 @@
+.userCenter_container{
+    background: #F2F3F4;
+}
+.individual_account_box{
+    margin:20px auto 40px;
+    width: 1200px;
+}
+/* 用户中心的侧边个人资料部分 */
+.white_background{
+    background:rgba(255,255,255,1);
+    border-radius:3px;
+}
+.personal_data{
+    width:300px;
+    height: auto;
+    padding: 40px 30px;
+    text-align: center;
+}
+.personal_data .message_reminder{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:0 22px 30px;
+}
+.personal_data .message_reminder .hint{
+    width: 40px;
+    height: 40px;
+    background:rgba(97,108,255,.12);
+    border-radius:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.message_reminder .hint i{
+    color:#616CFF;
+    font-size: 20px;
+}
+.personal_data .personal_portrait{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.personal_data .personal_portrait img{
+    width: 100%;
+    height: 100%;
+}
+.person_icon{
+	display: flex;
+    justify-content: space-around;
+    padding: 0px 10px;
+}
+.person_icon a{
+	display: block;
+	width: 25%;
+	width: 24px;
+	height: 24px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.person_icon a img{
+	width: 100%;
+	height: 100%;
+}
+.mail_hover,.vip_hover,.personal_certification_hover,.co_certification_hover{
+	display: none;
+}
+.ger_name{
+	height: 26px;
+    margin:16px auto 26px;
+    font-size:20px;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+}
+.region{
+    margin-bottom: 30px;
+}
+.region span{
+    font-size:14px;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+}
+/*.region span:first-child:after{
+    content: "";
+    width: 1px;
+    height: 10px;
+    border: 1px solid rgba(153,153,153,1);
+    margin:0 10px;
+}*/
+.person_icon i{
+    margin-left: 20px;
+}
+.person_icon i:first-child{
+    margin-left: 0;
+}
+ .data_integrity{
+    margin:20px auto 0;
+    display: flex;
+    align-items: center;
+}
+.personal_integrity{
+    font-size: 14px;
+    margin-top: 24px;
+    justify-content: center;
+}
+.personal_data .personal_integrity span{
+    font-size: 14px;
+    color: #333333;
+}
+ .data_integrity .integrity_tip{
+    font-size:16px;
+    font-weight:400;
+    color:#666666;
+}
+.data_integrity .authentication{
+    font-size:16px;
+    font-weight:400;
+    color:#616CFF;
+}
+.data_integrity .integBox{
+    margin-left: 14px;
+}
+/* 修改layui样式 */
+/* 按钮 */
+.width_120{
+    width: 120px;
+    color:#616CFF;
+    height: 32px;
+    line-height: 32px;
+}
+.width_120:hover{
+    background:rgba(97,108,255,1);
+    color:#ffffff;
+    border:0;
+}
+.layui-btn-primary{
+    border-color:#616CFF;
+}
+.layui-progress{
+    background-color: #EEEEEE;
+}
+.layui-progress-big, .layui-progress-big .layui-progress-bar{
+    height: 8px;
+    line-height: 8px;
+    width: 100px; 
+}
+.layui-progress-bar{
+    background-color: #E73637;
+}
+/* 进度条的提示文本 */
+.layui-progress-big .layui-progress-text{
+    line-height: 14px;
+    color:#333333;
+    font-size: 14px;
+    position: relative;
+    top: 0;
+    left: 90px;
+    display: none;
+}
+.layui-tab-card>.layui-tab-title .layui-this{
+    background-color: #616CFF;
+    color:#ffffff;
+}
+.layui-tab-title .layui-this:after{
+    border-bottom: #616CFF;
+    border-width: 0px;
+    border-radius: 3px 3px 0 0;
+}
+.layui-tab-title .sr_real:after{
+    border:0!important;
+}
+.layui-tab-title li{
+    padding: 0;
+    line-height: 60px;
+}
+.layui-tab-title{
+    border-bottom-width:0;
+}
+.layui-tab-title .layui-this:after{
+    height: 60px;
+}
+.layui-tab-brief>.layui-tab-title .layui-this{
+    color:#616CFF;
+}
+.layui-tab-brief>.layui-tab-more li.layui-this:after, .layui-tab-brief>.layui-tab-title .layui-this:after{
+    border-bottom-color:#616CFF;
+}
+/* 结束 */
+/*  用户中心个人账户的侧边按钮切换*/
+.slide{
+    margin-top: 10px;
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+}
+.account_switching{
+   width: 300px;
+   height: auto;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.account_switching span{
+    display: none;
+}
+.account_switching .account_li{
+    font-size:16px;
+    font-weight:400;
+    height: 60px;
+    flex-direction: column;
+    line-height: 60px;
+    color:#666666;
+    border-bottom:1px solid rgba(242,243,244,0.5);
+    cursor: pointer;
+	text-align: center;
+	overflow:hidden;
+}
+.account_switching .account_li:first-child{
+    border-radius:3px 3px 0 0;
+}
+/*侧边栏变色*/
+.slide .layui-tab-title .layui-this{
+    background-color: #616CFF;
+    color:#ffffff;
+}
+.account_right{
+    margin-left: 36px;
+}
+.padding_0{
+    padding: 0;
+}
+.account_switching .account_li.side_title_on{
+	background-color: #616CFF;
+    color: #ffffff;
+}
+.account_switching .account_li a{display: block;}
+.account_switching .account_li a:hover{color:#616CFF;}

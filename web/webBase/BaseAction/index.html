@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="keywords" content="职场信用，职信，员工征信，职场征信查询" />
+		<meta name="description" content="X职查是一个职场信用共享与查询平台。在X职查平台企业可以把员工的守信和失信行为在系统里共享，也可以在雇佣前或雇佣中查询员工的职场征信。X职查是一个专业的区块链职业信用查询平台。" />
+		<meta name="author" content="xiangyang" />
+		<meta name="renderer" content="webkit">
+		<title>X职查-职场信用共享查询平台</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../public/webBase/images/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="../../../public/webBase/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="../../../public/webBase/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../../../public/webBase/layui/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="../../../public/webBase/css/user/userFooter.css" />
+		<script src="../../../public/webBase/public/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../public/webBase/public/template-web.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../public/webBase/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../public/webBase/config/api.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../public/webBase/js/base.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../../public/webBase/js/index.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<body>
+			<!--header-->
+			<div class="container percentageH100 percentageW100">
+
+				<div class="container_header_img percentageW100">
+
+					<div class="container_header">
+						<div class="header100">
+							<!--导航-->
+							<div class="header w1200">
+								<div class="header_logo">
+									<a target="_blank" href="../UserAction/myAccount.html"><img src="../../../public/webBase/images/index/logo.png" /></a>
+								</div>
+								<!--nav-->
+								<div class="header_nav">
+									<ul>
+										<li>
+											<a href="/HRzhicha/HRzhicha/app/views/front/webHome/HomeAction/about.html">首页</a>
+										</li>
+										<li class="index_check_personal">
+											<a>查个人</a>
+										</li>
+										<li class="index_check_company">
+											<a>查企业</a>
+										</li>
+										<li class="index_online_manpower">
+											<a>线上人力</a>
+										</li>
+										<li>
+											<a >关于我们</a>
+										</li>
+
+									</ul>
+								</div>
+								<div class="header_right_login login_no_login">
+									<a href="login.html">
+										<div class="header_login">
+											登录
+										</div>
+									</a>
+									<a href="register.html">
+										<div class="header_register">
+											注册
+										</div>
+									</a>
+								</div>
+								<div class="login_show_login" style="display: none;">
+									<div class="login_show_login_h">
+
+										<a target="_blank" href="../UserAction/myAccount.html">
+											<img class="login_avatar" src="../../../public/webBase/images/index/pic_new.png" style="width: 44px;height: 44px;border-radius: 50%;" />
+										</a>
+									</div>
+									<!--登录后鼠标滑过头像-->
+									<div class="logo_hover_land">
+										<a href="">
+											<div class="each_land each_land1">
+												<img src="../../../public/webBase/images/public/switch.png" />
+												<p>账户切换</p>
+											</div>
+										</a>
+										<a href="#">
+											<div class="each_land each_land2">
+												<img src="../../../public/webBase/images/public/p_c.png" />
+												<p>实名认证</p>
+
+											</div>
+										</a>
+										<div class="each_land each_land3">
+											<img src="../../../public/webBase/images/public/sign_out.png" />
+											<p>退出登录</p>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+
+							<div class="header_center w1200">
+								<h3>查职场信息&nbsp;&nbsp;&nbsp;就上X职查</h3>
+								<div class="header_seach">
+									<!--搜索框-->
+									<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief" style="">
+										<ul class="layui-tab-title">
+											<li>查个人</li>
+											<li class="layui-this">查企业</li>
+											<div class="on_line seach_online_manpower">线上人力</div>
+										</ul>
+										<div class="layui-tab-content" style="padding: 0;">
+											<div class="layui-tab-item" style="position: relative;">
+
+												<div class="seach_personal">
+													<div class="seach_personal_inp  fl">
+														<div class="qqqqq">
+															<input type="text" name="" autocomplete="off" class="name seach_personal_name fl" id="username" placeholder="姓名" />
+															<input type="text" name="" autocomplete="off" class="IDcard fl" id="IDcard" placeholder="身份证号码" />
+															<input type="text" name="" autocomplete="off" class="phone fl" id="phone_number" placeholder="手机号码" />
+															<span class="checkExistRong" id="checkExistname"></span>
+															<span id="checkExistID"></span>
+															<span id="checkExistPhone"></span>
+														</div>
+
+													</div>
+													<input type="submit" name="" class="buttom personal_buttom fl" value="搜索" />
+												</div>
+												<div class="input_no_air"></div>
+											</div>
+											<div class="layui-tab-item layui-show">
+
+												<div class="seach_company seach_personal">
+													<div class="seach_company_inp fl">
+
+														<input type="text" name="" autocomplete="off" class="company company_input fl" id="ttttt" placeholder="请输入企业名称" value="" />
+													</div>
+													<input type="submit" name="" autocomplete="off" class="buttom com_button fl" value="搜索" />
+												</div>
+
+											</div>
+											<!--<div class="layui-tab-item">内容3</div>-->
+										</div>
+									</div>
+									<!--个人搜索记录-->
+									<!--<div class="personal_history">
+										<div class="personal_history_list">
+											<ul>
+												<li>
+													<div class="personal_history_list_content">
+														<span class="name_text">毕晟</span>
+														<span class="IDcard_text">371102199106237510</span>
+														<span class="phone_text">18300524242</span>
+													</div>
+												</li>
+												<li>
+													<div class="personal_history_list_content">
+														<span class="name_text">欧阳娜娜</span>
+														<span class="IDcard_text">371102199106237510</span>
+														<span class="phone_text">18300524242</span>
+													</div>
+												</li>
+												<li>
+													<div class="personal_history_list_content">
+														<span class="name_text">易烊千玺</span>
+														<span class="IDcard_text">371102199106237510</span>
+														<span class="phone_text">18300524242</span>
+													</div>
+												</li>
+												<li>
+													<div class="personal_history_list_content">
+														<span class="name_text">周杰伦</span>
+														<span class="IDcard_text">371102199106237510</span>
+														<span class="phone_text">18300524242</span>
+													</div>
+												</li>
+											</ul>
+											<div class="clear_personal_history">
+												清空搜索历史
+											</div>
+										</div>
+
+									</div>-->
+									<!--企业搜索记录-->
+									<div class="company_history">
+										<div id="company_history"></div>
+										<script type="text/html" id="company_history_template">
+
+											<div class="company_history_list">
+												<ul>
+													{{each search_record}}
+													<li><span onclick="his_list({{$index}})">{{$value.search_name}}</span></li>
+													{{/each}}
+												</ul>
+												<div class="clear_company_history">
+													清空搜索历史
+												</div>
+											</div>
+										</script>
+									</div>
+
+								</div>
+
+							</div>
+							<!--热搜-->
+							<div class="header_center_nav clear">
+								<ul>
+									<li name="li_company">
+										<p>热搜:</p>
+									</li>
+
+									<li name="li_company">
+										<p>工商银行</p>
+									</li>
+									<li name="li_company">
+										<p>当当网</p>
+									</li>
+									<li name="li_company">
+										<p>淘宝</p>
+									</li>
+									<li name="li_company">
+										<p>马蜂窝</p>
+									</li>
+									<li name="li_company">
+										<p>双十一</p>
+									</li>
+									<li name="li_company">
+										<p>京东</p>
+									</li>
+									<li name="li_company">
+										<p>百度网盘</p>
+									</li>
+									<li name="li_company">
+										<p>三只松鼠</p>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+				<!--服务功能-->
+				<div class="service_function">
+					<div class="service_function1200 w1200">
+						<div class="index_title">
+
+							<div class="index_title_txt">
+								<div class="">
+									服务功能
+									<i></i>
+								</div>
+								<div class="">
+									SERVICE FUNCATION
+								</div>
+							</div>
+
+						</div>
+						<div class="service_function_list">
+							<div class="clear">
+								<dl class="service_function_list1">
+									<a>
+										<dt><img src="../../../public/webBase/images/index/platform5.png"/></dt>
+										<dd>被执行人查询</dd>
+									</a>
+								</dl>
+								<dl class="service_function_list2">
+									<a>
+										<dt><img src="../../../public/webBase/images/index/platform6.png"/></dt>
+										<dd>失信人查询</dd>
+									</a>
+								</dl>
+								<dl class="service_function_list3">
+									<a>
+										<dt><img src="../../../public/webBase/images/index/platform7.png"/></dt>
+										<dd>涉诉信息查询</dd>
+									</a>
+								</dl>
+								<dl class="service_function_list4">
+									<a>
+										<dt><img src="../../../public/webBase/images/index/platform4.png"/></dt>
+										<dd>银行逾期查询 </dd>
+									</a>
+								</dl>
+								<dl class="service_function_list5">
+									<a>
+										<dt><img src="../../../public/webBase/images/index/platform0.png"/></dt>
+										<dd>新市民服务</dd>
+									</a>
+								</dl>
+								<dl class="service_function_list6">
+									<a>
+										<dt><img src="../../../public/webBase/images/index/platform1.png"/></dt>
+										<dd>网贷黑名单</dd>
+									</a>
+								</dl>
+								<dl class="service_function_list7 bank_two">
+									<a>
+										<dt><img src="../../../public/webBase/images/index/bank_card_two.png"/></dt>
+										<dd>银行卡二要素</dd>
+									</a>
+								</dl>
+								<dl class="service_function_list8">
+									<a>
+										<dt><img src="../../../public/webBase/images/index/platform2.png"/></dt>
+										<dd>招聘信息查询</dd>
+									</a>
+								</dl>
+								<dl class="service_function_list9 bank_two">
+									<a>
+										<dt><img src="../../../public/webBase/images/index/bank_carbin.png"/></dt>
+										<dd>银行卡宾信息</dd>
+									</a>
+								</dl>
+								<dl class="service_function_list10">
+									<a>
+										<dt><img src="../../../public/webBase/images/index/platform3.png"/></dt>
+										<dd>不良记录查询</dd>
+									</a>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--实名认证-->
+				<div class="certification">
+					<div class="bg_color">
+						<div class="certification1200 w1200">
+							<div class="certification_text">
+								<h4>实名认证即刻享受更多特权</h4>
+								<p>为您的私人信息保驾护航</p>
+
+								<div class="certification_button">
+									前往认证
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--产品介绍-->
+				<div class="product_description percentageW100">
+					<div class="product_description1200 w1200">
+						<div class="index_title">
+							<div class="index_title_txt">
+								<div class="">
+									产品介绍
+									<i></i>
+								</div>
+								<div class="">
+									PRODUCT PRESENTATION
+								</div>
+							</div>
+						</div>
+						<div class="product_description_list clear">
+							<dl>
+								<dt><img src="../../../public/webBase/images/index/product1.png"/></dt>
+								<dd>
+									<h6>实名共享</h6>
+									<p>用户全部经实名认证 </p>
+									<p>发布、查询、申诉无虚假</p>
+								</dd>
+							</dl>
+							<dl>
+								<dt><img src="../../../public/webBase/images/index/product2.png"/></dt>
+								<dd>
+									<h6>授权机制</h6>
+									<p>信息授权验证，安全可靠 </p>
+									<p>保障合法权益，维护私密</p>
+								</dd>
+							</dl>
+							<dl>
+								<dt><img src="../../../public/webBase/images/index/product3.png"/></dt>
+								<dd>
+									<h6>评论机制</h6>
+									<p>实名制评论，真实有效</p>
+									<p>严格审核，杜绝恶意水刷</p>
+								</dd>
+							</dl>
+							<dl>
+								<dt><img src="../../../public/webBase/images/index/product4.png"/></dt>
+								<dd>
+									<h6>VIP服务</h6>
+									<p>塑造职场IP，高度曝光自身</p>
+									<p>便捷分类筛选，洞悉职场前沿</p>
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<!--特色系统-->
+				<div class="featured_system percentageW100">
+					<div class="">
+						<div class="featured_system_padding">
+							<div class="index_title">
+
+								<div class="index_title_txt">
+									<div class="">
+										特色系统
+										<i></i>
+									</div>
+									<div class="">
+										CHARACTERISTIC SYSTEM
+									</div>
+								</div>
+							</div>
+							<!--轮播图-->
+							<div class="featured_system_swper">
+								<div class="layui-carousel" id="test2" style="margin-top: 15px;background:none;">
+									<div carousel-item="">
+										<div class="cf content_img">
+											<img src="../../../public/webBase/images/index/index_style_img1.png" style="width:380px;height:236px;float: left;margin-right:30px;" />
+											<img src="../../../public/webBase/images/index/index_style_img3.png" style="width:380px;height:236px;float: left;margin-right:30px;" />
+											<img src="../../../public/webBase/images/index/index_style_img2.png" style="width:380px;height:236px;float: left;" />
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--平台公告-->
+				<div class="platform_announcement">
+					<div class="platform_announcement1200 w1200 ">
+						<div class="index_title">
+							<div class="index_title_txt">
+								<div class="">
+									平台公告
+									<i></i>
+								</div>
+								<div class="">
+									PLATFORM ANNOUNCEMENT
+								</div>
+							</div>
+						</div>
+
+						<div id="platform_announcement_id"></div>
+						<script id="platform_announcement_template" type="text/html">
+							<div class="cf">
+								{{each Notice}}
+
+								<div class="platform_list fl">
+									<a href="">
+										<div class="platform_list_img percentageW100">
+											<img src="{{$value.image_filename}}" />
+										</div>
+										<div class="platform_list_content clear">
+											<div class="platform_list_content_top">
+												<span><img src="../../../public/webBase/images/favicon.ico"/>X职查</span><span>{{$value.time}}</span>
+												<div class="clear"></div>
+											</div>
+											<h4 class="percentageW100">{{$value.title}}</h4>
+											<p>{{$value.content}}</p>
+											<div class="platform_list_delist">
+												查看详情
+											</div>
+										</div>
+									</a>
+								</div>
+
+								{{/each}}
+
+							</div>
+
+						</script>
+
+					</div>
+
+					<!--行业新闻资讯-->
+					<div class="industry_news percentageW100">
+						<div class="industry_news1200 w1200">
+							<div class="index_title">
+
+								<div class="index_title_txt">
+									<div class="">
+										行业新闻资讯
+										<i></i>
+									</div>
+									<div class="">
+										NEWS INFORMATION
+									</div>
+								</div>
+
+							</div>
+							<div class="industry_news_content">
+								<!--视频-->
+								<div class="industry_news_video">
+									<a href="####" onclick="showView('/data/xuanchuanpian.mp4')">
+										<img src="../../../public/webBase/images/index/pic_new.png" style="height: 308px;width: 520px;" />
+										<img src="../../../public/webBase/images/pic_bg.png" style="position: absolute;top: 110px;left: 215px;width: 70px;height: 70px;" />
+									</a>
+								</div>
+								<!--视频-->
+								<!--列表-->
+								<div id="industry_news"></div>
+								<script id="industry_template" type="text/html">
+									<div class="industry_news_content_list">
+										<ul>
+											{{each news}}
+											<li>
+												<div class="industry_news_li_content cf">
+													<a href="#">
+														<span class="li_num fl">0{{$index+1}}</span>
+														<h4 class="fl" id="">{{$value.title}}</h4>
+													</a>
+													<span class="li_time fr" id="li_time">{{$value.time}}</span>
+												</div>
+												<div class="industry_news_li_text" id="">
+													{{$value.content}}
+
+												</div>
+											</li>
+											{{/each}}
+
+										</ul>
+
+									</div>
+								</script>
+							</div>
+
+						</div>
+
+					</div>
+
+					<!--热门企业查询-->
+					<div class="popular_query percentageW100">
+						<div class="popular_query1200 w1200">
+							<div class="index_title">
+								<div class="index_title_txt">
+									<div class="">
+										热门企业查询
+										<i></i>
+									</div>
+									<div class="">
+										POPULAR QUERIES
+									</div>
+								</div>
+
+							</div>
+							<div id="popular_query"></div>
+							<script id="popular_query_template" type="text/html">
+
+								<div class="cf">
+									{{each hotData}}
+									<div class="popular_query_list fl">
+										<a onclick="searchHot('{{$value.entname}}')">
+											<div class="popular_query_list_box">
+												<h3>{{$value.value}}</h3>
+												<p>成立日期：<span id="popular_query_time">{{$value.queryTime}}</span></p>
+												<p> 法定代表人：{{$value.legalperson}}</p>
+											</div>
+										</a>
+									</div>
+									{{/each}}
+
+								</div>
+							</script>
+
+						</div>
+					</div>
+					<!--合作伙伴-->
+					<div class="partner percentageW100">
+
+						<div class="partner1200 w1200">
+							<div class="index_title">
+
+								<div class="index_title_txt">
+									<div class="">
+										合作伙伴
+										<i></i>
+									</div>
+									<div class="">
+										COOPERATIVE PARTNER
+									</div>
+								</div>
+
+							</div>
+							<div class="partner_list">
+								<ul>
+
+									<li>
+										<a href="http://www.pbccrc.org.cn" target="_blank"><img src="../../../public/webBase/images/index/zhengxinzhongxin.png" /></a>
+									</li>
+
+									<li>
+										<a href="https://www.tianyancha.com" target="_blank"><img src="../../../public/webBase/images/index/tyc.png" /></a>
+									</li>
+									<li>
+										<a href="https://click.aliyun.com" target="_blank"><img src="../../../public/webBase/images/index/aliyun.png" /></a>
+									</li>
+									<li>
+										<a href="https://www.qixin.com" target="_blank"><img src="../../../public/webBase/images/index/qixinbao.png" /></a>
+									</li>
+									<li>
+										<a href="http://www.zhunanjinrong.com" target="_blank"><img src="../../../public/webBase/images/index/zhunanjinrong.png" /></a>
+									</li>
+									<li>
+										<a href="http://www.shanghai-cis.com.cn" target="_blank"><img src="../../../public/webBase/images/index/shzi.png" /></a>
+									</li>
+									<li>
+										<a href="https://www.qichacha.com" target="_blank"><img src="../../../public/webBase/images/index/qcc.png" /></a>
+									</li>
+
+								</ul>
+							</div>
+
+						</div>
+					</div>
+					<!--footer-top-->
+					<div class="footer_top">
+						<ul class="userFot_top">
+							<li class="userFot_li">
+								<!--<i class="layui-icon-username"></i>-->
+								<i><img src="../../../public/webBase/images/index/user.png"/></i>
+								<div class="icon_rig">
+									<p class="icon_num">6000+</p>
+									<p class="icon_tip">已有超过3000名用户加入X职查</p>
+								</div>
+							</li>
+							<li class="userFot_li">
+								<i><img src="../../../public/webBase/images/index/check_num.png"/></i>
+								<div class="icon_rig">
+									<p class="icon_num">6000+</p>
+									<p class="icon_tip">已有超过3000名用户加入X职查</p>
+								</div>
+							</li>
+							<li class="userFot_li">
+								<i><img src="../../../public/webBase/images/index/teamwork.png"/></i>
+								<div class="icon_rig">
+									<p class="icon_num">6000+</p>
+									<p class="icon_tip">已有超过3000名用户加入X职查</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!--引入的公共底部-->
+					<div id="footer">
+						<!-- 用户中心-个人实名认证-尾部 -->
+
+					</div>
+					<!--视频展示开始标签-->
+					<span id="open"></span>
+					<div class="up" id="up" style="top: 1814.5px; left: -55.5px; display: none;">
+						<div class="videoBox">
+							<div style="float: right; padding-right: 10px;">
+								<img id='close' src="../../../public/webBase/images/off.png" onclick="divClose()" />
+							</div>
+							<section id="player">
+								<video id="mediaImage" width="1020" controls poster="">
+									<source id="mediaMp4" src="" />
+								</video>
+							</section>
+						</div>
+					</div>
+					<!-- 视频展示结束 标签-->
+					<!--侧边栏-->
+					<div class="sidebar">
+						<div class="sidebar_box">
+							<ul>
+								<li>
+									<span class="sid_img"></span>
+									<a href="javascript:;" class="back_top">返回顶部</a>
+								</li>
+								<li>
+									<span class="sid_img"></span>
+									<a href="javascript:;" class="online_service">在线客服</a>
+								</li>
+								<li>
+									<span class="sid_img"></span>
+									<a href="javascript:;" class="app_down">APP下载</a>
+									<div class="app_down_img">
+										<img src="../../../public/webBase/images/index/android.png" />
+									</div>
+								</li>
+								<li>
+									<span class="sid_img"></span>
+									<a href="javascript:;" class="weChat_service">微信服务</a>
+									<div class="app_down_img">
+										<img src="../../../public/webBase/images/index/weixin_public.png" />
+									</div>
+								</li>
+							</ul>
+
+						</div>
+					</div>
+					<!--线上人力的弹窗-->
+					<div class="online_pop">
+						<div class="online_pop_box">
+							<p>个人不支持此功能！</p>
+							<a href="#">
+								<div class="online_pop_button">
+									确定
+								</div>
+							</a>
+						</div>
+					</div>
+
+					<div class="fade_po land_files" style="display: none;" id="realNameError">
+						<div class="land_filess">
+							<p>未实名，请先实名！</p>
+							<div class="btn_ground">
+								<a href="#" class="closs" id="">去实名</a>
+								<a href="#" class="closss" id="willCancel">取消</a>
+							</div>
+						</div>
+					</div>
+					<!--<div class="fade_po land_files" style="display: none;" id="">
+						<div class="land_filess">
+							<p>未实名，请先实名！</p>
+							<div class="btn_ground">
+								<a href="#" class="closs" id="">实名</a>
+								<a href="#" class="closss" id="">取消</a>
+							</div>
+						</div>
+					</div>-->
+					<!--提示未登录-->
+					<div class="fade_po land_files" style="display: none;" id="no_login">
+						<div class="land_filess">
+							<p>还未登录 请登录！</p>
+							<div class="btn_ground">
+								<a href="#" class="closs go_login" id="">去登录</a>
+								<a href="#" class="closss" id="">取消</a>
+							</div>
+						</div>
+					</div>
+
+					<!--服务功能弹窗-->
+					<div class="service_function_pop" id="service_function_pop" style="display: none;">
+						<div class="service_function_pop_box" id="service_function_pop_box">
+							<h4 class="service_function_title">被执行人</h4>
+							<p class="service_resolve">请输入被查询对象信息</p>
+							<div class="service_input_Box">
+								<div class="input_box input_box_name" style="position: relative;">
+									<input type="text" name="" autocomplete="off" id="aa" class="service_name" value="" placeholder="请输入姓名" />
+									<img src="../../../public/webBase/images/public/cancel.png" class="service_input_img service_input_img1" style="display: none;" />
+								</div>
+								<div class="input_box " style="position: relative;">
+									<input type="text" name="" autocomplete="off" id="" class="service_num" value="" placeholder="请输入手机号" />
+									<img src="../../../public/webBase/images/public/cancel.png" class="service_input_img service_input_img2" />
+								</div>
+								<div class="input_box " style="position: relative;">
+									<input type="text" name="" autocomplete="off" id="" class="service_idcard" value="" placeholder="请输入身份证号" />
+									<img src="../../../public/webBase/images/public/cancel.png" class="service_input_img service_input_img3" />
+								</div>
+							</div>
+							<p class="serviceError" id=""></p>
+							<button class="service_button">立即查询</button>
+							<p class="helpUser">已帮助<span>3698</span>位用户查询信息</p>
+						</div>
+					</div>
+					<!--银行卡二要素、银行卡宾正在开发中弹窗-->
+					<div class="zhangzaikad back_bank_popup1" id="back_bank_popup1">
+						<div class="popup_box" id="popup_box">
+							<h4>正在开发中</h4>
+							<p>敬请期待</p>
+							<img src="../../../public/webBase/images/index/in_development.png" />
+							<div class="popup_btn">
+								返回
+							</div>
+						</div>
+					</div>
+					<script type="text/javascript">
+						//layui的js
+						//tab切换功能
+						layui.use('element', function() {
+							var $ = layui.jquery,
+								element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+
+							//触发事件
+							var active = {
+								tabAdd: function() {
+									//新增一个Tab项
+									element.tabAdd('demo', {
+										title: '新选项' + (Math.random() * 1000 | 0) //用于演示
+											,
+										content: '内容' + (Math.random() * 1000 | 0),
+										id: new Date().getTime() //实际使用一般是规定好的id，这里以时间戳模拟下
+									})
+								},
+								tabChange: function() {
+									//切换到指定Tab项
+									element.tabChange('demo', '22'); //切换到：用户管理
+								}
+							};
+
+						});
+
+						//轮播图功能
+
+						layui.use(['carousel', 'form'], function() {
+							var carousel = layui.carousel,
+								form = layui.form;
+
+							//改变下时间间隔、动画类型、高度
+							carousel.render({
+								elem: '#test2',
+								interval: 1800,
+								anim: 'fade',
+								height: '320px',
+								width: '100%'
+							});
+
+						});
+					</script>
+
+					<script type="text/javascript">
+						//首页的视频
+						//两种方式实现div居中：1：用css方式：top：50%，left：50%； margin-let:-divwidth/2 margin-top:divheight/2; 2:用js实现：获取窗口的高宽，top=（屏幕高-div高）/2,为了随时的监听浏览器的改变，需要用到浏览器事件
+						function getScrollTop() {
+							var scrollTop = 0;
+							if(document.documentElement && document.documentElement.scrollTop) {
+								scrollTop = document.documentElement.scrollTop;
+							} else if(document.body) {
+								scrollTop = document.body.scrollTop;
+							}
+							return scrollTop;
+						}
+
+						function showView(PlaySrc) {
+							document.getElementById("open").onclick();
+							//设置数据源，播放器开始播放
+							var mediaImageObj = document.getElementById("mediaImage");
+							mediaImageObj.src = PlaySrc;
+							mediaImageObj.play();
+
+							return false;
+						}
+
+						window.onload = function() {
+							function $(id) {
+								return document.getElementById(id);
+							}
+							//将div的位置封装在一个函数内部，直接调用
+
+							function myDiv() {
+								var mTop = getScrollTop();
+
+								var windowsHeight = window.innerHeight;
+								var addHeight = (windowsHeight - 540) / 2;
+
+								var windowsHeight = window.innerWidth;
+								var addWidth = (windowsHeight - 1020) / 2;
+
+								mTop = mTop + addHeight;
+								var mleft = (document.documentElement.clientWidth - 400) / 2;
+								$("up").style.top = mTop + "px";
+								$("up").style.left = addWidth + "px";
+							}
+
+							$("open").onclick = function() {
+								myDiv();
+								$("up").style.display = "block";
+								mask.style.display = "block";
+
+							}
+							$("close").onclick = function() {
+								$("up").style.display = "none";
+								mask.style.display = "none"
+								//播放器停止播放
+								var mediaImageObj = document.getElementById("mediaImage");
+								mediaImageObj.pause();
+
+							}
+							//创建一个DIV
+							var mask = document.createElement("div");
+							// //给这个DIV一个id和class属性
+							// mask.id="mask";
+							mask.className = "mask";
+							mask.style.width = document.documentElement.clientWidth;
+							mask.style.height = document.documentElement.clientHeight;
+							//将这个DIV放置到body里面--》一般是：父节点.appendChild(子节点)
+							//这里注意的是absolute，要设置top和left；
+							document.body.appendChild(mask);
+
+							//屏幕改变大小的时候，div不会自动的改变，需要添加窗口改变事件
+							window.onresize = function() {
+								myDiv();
+								mask.style.width = document.documentElement.clientWidth;
+								mask.style.height = document.documentElement.clientHeight;
+							}
+						}
+						//热门企业搜索跳转
+						function searchHot(companyName) {
+							//window.open("/front/webHome/HomeAction/searchCompany?companyName=" + companyName + "&mark=charge");
+						}
+					</script>
+
+		</body>
+
+</html>

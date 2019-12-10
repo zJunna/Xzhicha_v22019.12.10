@@ -1,0 +1,64 @@
+/* 我的账户-切换账户 */
+#switchingAccounts{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.switching_accounts{
+    padding:40px 80px;
+}
+.switch_account_button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+.switch_account_button button{
+    width: 260px;
+}
+.switch_account_button .layui-btn{
+    margin-left: 0;
+}
+.switch_account_button .layui-btn:first-child{
+    color:#ffffff;
+    background:#616CFF ;
+}
+.switch_account_button .layui-btn:first-child a{
+    color:#ffffff;
+}
+.switch_account_button .layui-btn:last-child{
+    margin-top: 20px;
+}
+.switching_wrap_left .switching_service_tip{
+    font-size:16px;
+    font-weight:500;
+    color:#999999;
+    margin: 20px auto 50px;
+}
+.switching_wrap_right{
+    width: 328px;
+    height: 230px;
+    overflow: hidden;
+}
+.switching_wrap_right img{
+    width: 100%;
+    height: 100%;
+}
+.layui-btn.gray_btn{
+    background: #EEEEEE;
+    border:0!important;
+}
+.layui-btn.gray_btn a{
+	color:#999999;
+}
+.switching_wrap_left .layui-btn{
+    height: 44px;
+    line-height: 44px;
+    padding:0 35px;
+}
+.sr_switch_user{
+    font-size:28px;
+font-weight:500;
+color:rgba(97,108,255,1);
+}

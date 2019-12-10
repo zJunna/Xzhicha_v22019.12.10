@@ -1,0 +1,83 @@
+/* 实名认证 */
+.co_real_name{width: 860px;font-size:14px;}
+/*标题*/
+.co_title{height: 60px;line-height: 60px;padding-left: 40px;color: #616CFF;font-size:16px;font-weight:500;background: #FFF;border-radius:3px;}
+/*未实名认证*/
+.co_part_no{margin-top: 10px;background: #FFF;border-radius:3px;padding: 40px 40px 0;}
+.co_part_tip{font-size:16px;margin-bottom: 30px;}
+/*input*/
+.real_form{}
+.layui-form-item1{margin-bottom: 20px;}
+.real_require{line-height: 38px;color: #FF0000;font-size: 16px;}
+.layui-form-label1{padding: 0;width: 100px;height: 40px;line-height: 40px;text-align: center;color: #999;}
+.real_input{width: 380px;border-radius:3px;padding-left: 22px;}
+/*错误提示*/
+.real_tip_1,.real_tip_2,.real_tip_3,.real_tip_4,.real_tip_5,.real_tip_6,.real_tip_7,.real_tip_8{margin-left: 20px;font-size:12px;color: #E73637;line-height: 38px;display: none;}
+.real_tip_5,.real_tip_8{line-height: 130px;}
+/*下拉框*/
+.layui-input-inline1{width: 160px !important;margin-right: 0 !important;}
+.layui-input-inline1:nth-child(1){margin-right: 60px !important;}
+.layui-form-select .layui-input{border-radius: 3px;}
+.layui-form-select dl dd.layui-this{background-color:#616CFF;}
+.layui-input-inline1 .layui-form-select .layui-input{text-indent: 12px;}
+/*营业执照*/
+.layui-input-block1{height: 130px;}
+.layui-input-block2{margin-top: 20px;font-size:12px;color: #999;line-height:18px;}
+.co_real_bor_dashed{width: 130px;height: 130px;border: 1px dashed #616CFF;border-radius:4px;padding: 4px;margin-right: 20px;}
+.co_real_bor_solid{width: 100%;height: 100%;background:rgba(97,108,255,0.1);border-radius:4px;}
+.sc_box{width: 100%;height: 100%;cursor: pointer;text-align: center;}
+.sc_box .sc_img_jia{width: 32px;height:32px;margin-top: 28px;}
+.sc_box .sc_title{margin-top: 20px;font-size:12px;color: #616CFF;}
+.sc_yyzz{width: 100%;height: 100%;cursor: pointer;text-align: center;line-height: 120px;position: relative;}
+.sc_yyzz .co_real_yyzz_upload{max-width: 100%;max-height: 100%;}
+/*上传按钮*/
+.co_sc_btn_box{position: relative;}
+.co_sc_btn{position: absolute;left: 0;top: 0;width: 100%;height: 100%;cursor: pointer;opacity: 0;}
+/*营业执照遮罩*/
+.sc_yyzz:hover .yyzz_zz{display: block;}
+.yyzz_zz{position: absolute;top: 0;left: 0;width: 100%;height: 100%;border-radius:4px;background: rgba(0,0,0,0.5);color: #fff;font-size:12px;display: none;}
+.yyzz_close{position: absolute;right: 6px;top: 6px;width: 12px;height: 12px;background: url(../../../images/public/del.png);}
+/*图片放大显示*/
+.mask{position: fixed;left: 0;top: 0;right: 0;bottom: 0;background: rgba(0,0,0,0.7);text-align: center;display: none;}
+.mask_close{position: fixed;top: 60px;right: 60px;width: 52px;height: 52px;background: url(../../../images/public/big_close.png);cursor: pointer;}
+#big_img_show{max-width: 800px;}
+/*工作证明*/
+.co_real_gzzm_upload{max-width: 100%;max-height: 100%;}
+/*提交*/
+.layui-form-item1:last-child{margin-top: 40px;}
+.real_sub{width:130px;height:36px;background: #616CFF;border-radius:3px;color: #FFF;}
+/*提交提示信息*/
+.real_sub_tip{border-top: 1px solid #F2F3F4;padding-top: 20px;padding-bottom: 20px;}
+.real_sub_tip p{color: #999;}
+
+/*实名认证失败、审核中、成功*/
+.co_part_tip_suc{margin-bottom: 40px;}
+.suc_tip_wait1{margin-bottom: 20px;font-size:20px;color: #F69C38;font-weight:500;}
+.suc_tip_wait2{color: #999;}
+.suc_tip_fail{font-size:20px;font-weight:500;color: #F35556;}
+.suc_tip_suc{font-size:20px;font-weight:500;color: #616CFF;}
+.co_input_block{line-height: 38px;}
+/*实名认证*/
+
+
+
+
+
+
+
+
+
+
+/*实名认证失败、实名认证成功*/
+.person_part_fail,.person_part_success{margin-top: 10px;padding-top: 144px;background: #FFF;border-radius:3px;text-align: center;}
+.person_fail_img img,.person_success_img img{width:130px;height:130px;}
+.person_fail_p1,.person_success_p1{margin-top: 24px;font-size:16px;}
+.person_fail_p2,.person_success_p2{margin-top: 20px;color: #666;}
+.person_rz_reset{margin-top: 40px;margin-bottom: 170px;width:130px;height:36px;background: #616CFF;border-radius:4px;color: #FFF;}
+/*成功*/
+.person_part_success{padding: 144px 60px 0;}
+.person_success_details{margin: auto;padding: 20px;margin-top: 30px;width:280px;height:86px;background: #EEE;border-radius:4px;text-align: left;}
+.person_success_details p:nth-child(1){margin-bottom: 10px;}
+.person_rz_success{margin-top: 80px;border-top: 1px solid #EEE;height: 54px;line-height: 54px;color: #999;}
+/*侧边栏变色*/
+.account_switching .account_li:nth-child(2) a{background-color: #616CFF;color: #ffffff;}

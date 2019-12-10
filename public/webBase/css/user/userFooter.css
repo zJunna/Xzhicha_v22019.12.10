@@ -1,0 +1,182 @@
+.sr_footer {
+	width: 100%;
+	height: auto;
+}
+
+#userFooter {
+	margin-top: 40px;
+}
+
+.sr_userFooter {
+	/*border-top: 2px solid rgba(153, 153, 153, 0.34);*/
+}
+
+.userFot_top {
+	margin: 0 auto;
+	width: 1200px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.userFot_top .userFot_li {
+	width: 21.33%;
+	display: flex;
+	align-items: center;
+	padding: 38px 0;
+}
+
+.userFot_top .userFot_li .icon_rig {
+	margin-left: 20px;
+}
+
+.userFot_li .icon_rig .icon_num {
+	font-size: 24px;
+	font-weight: 400;
+	color: rgba(102, 102, 102, 1);
+}
+
+.userFot_li .icon_rig .icon_tip {
+	font-size: 12px;
+	font-weight: 400;
+	color: rgba(102, 102, 102, 1);
+}
+
+.userFot_botBg {
+	background: #333333;
+}
+
+.userFot_bot {
+	margin: 0 auto;
+	width: 1200px;
+	padding: 60px 0 60px 0;
+}
+
+.userFot_bot .userFot_dl {
+	margin-left: 180px;
+}
+
+.userFot_bot .userFot_dl:first-child {
+	margin-left: 0;
+}
+
+.userFot_bot .userFot_dl dt {
+	font-size: 16px;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+	margin-bottom: 30px;
+}
+
+.userFot_bot .userFot_dl dd {
+	font-size: 14px;
+	font-weight: 400;
+	color: rgba(238, 238, 238, 1);
+	line-height: 24px;
+	cursor: pointer;
+}
+
+.userFot_dl .mobileApp {
+	width: 72px;
+	height: 72px;
+}
+
+.userFot_dl .mobileApp img {
+	width: 100%;
+}
+
+.userFot_dl .contactImg {
+	margin-top: 26px;
+	margin-bottom: 40px;
+}
+
+.userFot_dl .contactImg div {
+	border-radius: 50%;
+	/*background: red;
+	overflow: hidden;*/
+	margin-left: 12px;
+	position: relative;
+}
+
+.userFot_dl .contactImg div:first-child {
+	margin-left: 0;
+}
+
+.userFot_dl .contactImg div .weixin_img,
+.weibo_img,
+.qq_img {
+	width: 30px;
+	height: 30px;
+}
+
+.userFot_dl .contactImg div .weixin_img_er {
+	position: absolute;
+	top: 45px;
+	left: -20px;
+	display: none;
+}
+
+.userFot_dl .contactImg div .weibo_img_er {
+	position: absolute;
+	top: 45px;
+	left: -20px;
+	display: none;
+}
+
+.userFot_dl .contactImg div .qq_img_er {
+	position: absolute;
+	top: 45px;
+	left: -20px;
+	display: none;
+}
+
+
+/*.userFot_dl .contactImg div .weibo_img:hover .weibo_img_er{
+	display: inline-block;
+}*/
+
+.userFot_botBot {
+	border-top: 1px solid #999999;
+	padding-top: 20px;
+}
+
+.userFot_botBot .bottomInfor {
+	margin: 0 50px;
+}
+
+.bottomInforLi {
+	margin-left: 50px;
+}
+
+.bottomInforLi:first-child {
+	margin-left: 0;
+}
+
+.bottomInforLi a {
+	font-size: 14px;
+	font-weight: 400;
+	color: rgba(242, 243, 244, 1);
+}
+
+.copyright {
+	margin-top: 20px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+}
+
+.bottomPicture {
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+}
+
+.bottomPicture img {
+	width: 102px;
+	height: 32px;
+	float: left;
+}
+
+.bottomPicture img:last-child {
+	margin-left: 92px;
+}

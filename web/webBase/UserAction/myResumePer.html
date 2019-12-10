@@ -1,0 +1,819 @@
+<!--个人简历-->
+<link rel="stylesheet" type="text/css" href="../../../public/webBase/css/user/myResume/myResumePer.css" />
+<script src="../../../public/webBase/js/user/myResume/myResumePer.js" type="text/javascript" charset="utf-8"></script>
+<!--三级联动-->
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"/>
+<link rel="stylesheet" type="text/css" href="../../../public/webBase/css/user/myResume/fonts/element-icons.woff"/>
+<script src="../../../public/webBase/public/vue-3.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../public/webBase/public/element-ui.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../public/webBase/js/user/myResume/positionName.js" type="text/javascript" charset="utf-8"></script>
+<!--3 - end-->
+<div class="per_vitae layui-tab-item layui-show">
+	<div class="layui-tab">
+		<ul class="layui-tab-title per_myResume">
+			<li class="account_choice_li layui-this">个人简历</li>
+			<!--<li class="account_choice_li">职位推荐</li>-->
+		</ul>
+		<div class="layui-tab-content">
+			<!--个人简历-->
+			<div class="layui-tab-item layui-show white_background">
+				<div id="Curriculum_vitae"></div>
+				<script id="Curriculum_vitae_script" type="text/html">
+					<!--更新时间  —— 头像-->
+				<div class="per_top padding_left_right_40">
+						<div class="per_data_and_preview cf">
+							<div class="per_data fl">最后更新日期：<span>{{information.Strtime.split(' ')[0]}}</span></div>
+							<div class="per_preview fr">
+								<a id="preview_resume_a">预览简历</a>
+							</div>
+						</div>
+						<div class="per_head_portrait">
+							<div class="per_photo">
+								<img src="{{users.photo}}" />
+							</div>
+							<div class="per_name_Gender">
+								<span class="per_name">{{users.reality_name}}</span>
+								{{if users.sex == 0}}
+								<img src="../../../public/webBase/images/user/per_nan.png" class="" title="性别" alt="性别" />
+								{{else}}
+								<img src="../../../public/webBase/images/user/per_nv.png" class="" title="性别" alt="性别" />
+								{{/if}}
+							</div>
+						</div>
+				</div>
+				<!--基本信息-->
+				<div class="per_essential_information padding_left_right_40 per_information_none basic_information">
+					<div class="per_essential_title cf">
+						<span class="Vertical_line"></span>
+						<h5 class="fl per_information_h5">基本信息</h5>
+						<a class="fr per_edit"><img src="../../../public/webBase/images/public/edit.png" />编辑</a>
+					</div>
+					<ul class="per_year_ul cf">
+						<!--年龄-->
+						{{if users.userAge == '' || users.userAge == null}}
+						<li class="per_year_li fl">年龄</li>
+						{{else}}
+						<li class="per_year_li fl">{{users.userAge}}岁</li>
+						{{/if}}
+						<!--民族-->
+						{{if information.race_name == '' || information.race_name == null}}
+						<li class="per_year_li fl">民族</li>
+						{{else}}
+						<li class="per_year_li fl">{{information.race_name}}</li>
+						{{/if}}
+						<!--//城市-->
+						{{if information.city_name == '' || information.city_name == null}}
+						<li class="per_year_li fl">北京</li>
+						{{else}}
+						<li class="per_year_li fl">{{information.city_name}}</li>
+						{{/if}}
+					</ul>
+					<div class="per_iphone_and_email cf">
+						<!--手机-->
+						<div class="per_iphone fl">
+							<img src="../../../public/webBase/images/user/per_phone.png" />
+							{{if information.mobile == '' || information.mobile == null}}
+							<span class="">未填写</span>
+							{{else}}
+							<span class="">{{information.mobile}}</span>
+							{{/if}}
+						</div>
+						<!--邮箱-->
+						<div class="per_iemail fl">
+							<img src="../../../public/webBase/images/user/per_email.png" />
+							{{if information.email == '' || information.email == null}}
+							<span class="">未填写</span>
+							{{else}}
+							<span class="">{{information.email}}</span>
+							{{/if}}
+						</div>
+					</div>
+				</div>
+				<!--展开编辑基本信息-->
+				<div class="per_Unfolding_information padding_left_right_40 Edit_basic_information">
+					<h5 class="per_information_h5 padding_left0">编辑基本信息</h5>
+					<div class="per_information_form">
+						<form class="layui-form" action="" lay-filter="EditInformation">
+							<div class="layui-form-item">
+								<label class="layui-form-label">姓名</label>
+								<div class="layui-input-block">
+									<input id="title_information" type="text" name="title_information" lay-verify="title_information" autocomplete="off" placeholder="请输入标题" class="title_information layui-input per_name">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">性别</label>
+								<div class="layui-input-block">
+									{{if users.sex == 0}}
+									<input type="radio" name="edit_sex" value="男" title="男" readonly="readonly">
+									{{else}}
+									<input type="radio" name="edit_sex" value="女" title="女" readonly="readonly">
+									{{/if}}
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">出生日期</label>
+								<div class="layui-input-block">
+									<input type="text" name="date1" id="date1" autocomplete="off" class="layui-input" readonly="readonly">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">民族</label>
+								<div class="layui-input-block">
+									<select name="race_name" lay-filter="race_name" id="race_name" class="race_name">
+										<!--<option value=""></option>-->
+									</select>
+								</div>
+							</div>
+							<div class="layui-form-item sr_per_right_20 cf select_input">
+								<label class="layui-form-label">现居住地</label>
+								<div class="layui-input-inline">
+									<select name="province" id="real_province" lay-filter="province">
+										<option value="">省份</option>
+									</select>
+								</div>
+								<div class="layui-form-mid">-</div>
+								<div class="layui-input-inline">
+									<select name="city" id="real_city" lay-filter="city">
+										<option value="">市区</option>
+									</select>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">联系电话</label>
+								<div class="layui-input-block">
+									<input id="per_phone" readonly type="text" name="title_phone" lay-verify="title" autocomplete="off" placeholder="" class="layui-input">
+									<a href="myAccount.html" class="tip_phone_per">去修改</a>
+								</div>
+							</div>
+							<div class="layui-form-item" style="width:100%;">
+								<label class="layui-form-label">邮箱地址</label>
+								<div class="layui-input-block">
+									<input id="per_email" readonly type="text" name="title_email" lay-verify="title" autocomplete="off" placeholder="" class="layui-input">
+									<a href="myAccount.html" class="tip_phone_per tip_email_per">去修改</a>
+								</div>
+							</div>
+							<div class="per_information_btn">
+								<button type="button" class="layui-btn per_save" id="per_save_edit">保存编辑</button>
+								<button type="button" class="layui-btn per_give_up">放弃编辑</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!--求职意向-->
+				<div class=" padding_left_right_40 per_essential_information Job_intention">
+					<div class="per_job_title cf">
+						<span class="Vertical_line"></span>
+						<h5 class="fl per_information_h5 sr_margin_top15">求职意向</h5>
+						
+						<a class="fr per_edit per_add_edit"><img src="../../../public/webBase/images/user/per_add.png" />添加</a>
+					</div>
+					<!--无信息时提示-->
+					{{if positionList == '' || positionList == null}}
+					<div class="per_job_content_no">
+						请添加您的求职意向
+					</div>
+					{{else}}
+					<!--有信息时提示-->
+					<div class="per_job_content" id="per_job_intention">
+						{{each positionList}} <!--//true-->
+							<!--有竖线时   —— 即有一条数据值时-->
+							<div class="per_job_option cf sr_margin_top0">
+								<ul class="per_job_exhibition fl">
+									<li class="fl">{{$value.positionname}}</li>
+									<li class="fl">{{$value.salary}}</li>
+									<li class="fl">{{$value.cityname}}</li>
+									<!--获取的职位id-->
+									<input type="hidden" name="per_position_id" id="per_position_id" value="{{$value.position_id}}" />
+									<!--获取的城市id-->
+									<input type="hidden" name="per_city_id" id="per_city_id" value="{{$value.workcity_id}}" />
+									<input type="hidden" name="per_city_idlll" id="per_city_idlll" value="{{$value.id}}" />
+									<!--获取当前有几条数据-->
+									<input type="hidden" name="per_job_position_length" id="per_job_position_length" value="" />
+									<!--获取职位id-->
+									<input type="hidden" name="look_position_value" id="look_position_value" value="" />
+								</ul>
+								<div class="per_job_button fr">
+									<div class="per_job_edit fr">编辑</div>
+									<div class="per_job_edit_hover">
+										<div class="pos_edit1 fr per_job_edit_edit" add_job_edit="{{$value.id}}">
+											<img src="../../../public/webBase/images/public/edit.png" />编辑
+										</div>
+										<div class="pos_del1 per_job_edit_delete fr" delete_job_edit="{{$value.id}}">
+											<img src="../../../public/webBase/images/public/bin.png" />删除
+										</div>
+									</div>
+								</div>
+							</div>
+						{{/each}}
+					</div>
+					{{/if}}
+				</div>
+				<!--添加求职意向-->
+				<div class="car_intention_objective Add_job_intention">
+					<h5>添加求职意向</h5>
+					<div class="car_intention_objective_form cf ">
+						<form class="layui-form" action="" lay-filter="job_search">
+							<div id="zhiweiiID"></div>
+							<div class="layui-form-item car_title cf">
+								<label class="layui-form-label">期望职位</label>
+								<div class="layui-input-block" id="position_name_per">
+									<el-cascader name="" class='look_position' v-model="value" :options="options" :props="{ expandTrigger: 'hover' }" @change="handleChange"></el-cascader>
+									
+									<div class="tip_look_position">请选择您的期待职位</div>
+								</div>
+							</div>
+							<div class="layui-form-item car_title cf pd30 per_salary">
+								<div class="layui-inline">
+									<label class="layui-form-label">薪资要求</label>
+									<div class="layui-input-inline fl">
+										<select name="salary_requirement" lay-verify="required" lay-search="" class="per_salary_select"> 
+											<option value="">请选择</option>
+											<option value="21">2K/月以下</option>
+											<option value="22">2K-4K/月</option>
+											<option value="23">4K-6K/月</option>
+											<option value="24">6K-8K/月</option>
+											<option value="25">8K-10K/月</option>
+											<option value="26">10K-15K/月</option>
+											<option value="27">15K-20K/月</option>
+											<option value="28">20K-30K/月</option>
+											<option value="29">30K/月以上</option>
+										</select>
+										<div class="tip_Job_category">请选择您的薪资要求</div>
+									</div>
+								</div>
+							</div>
+							<div class="layui-form-item car_title cf select_input">
+								<label class="layui-form-label">意向城市</label>
+								<div class="layui-input-inline per_see_province">
+									<select name="province" id="per_job_province" lay-filter="province">
+										<option value="">请选择省</option>
+									</select>
+									<div class="tip_province_add">请选择省</div>
+								</div>
+								<div class="layui-form-mid">-</div>
+								<div class="layui-input-inline per_see_city">
+									<select name="city" id="per_job_city" lay-filter="city">
+										<option value="">请选择市</option>
+									</select>
+									<div class="tip_city_add">请选择市</div>
+								</div>
+							</div>
+						</form>
+						<div class="car_intention_objective_btn">
+							<button type="button" class="layui-btn car_intention car_add" id="save_Add_job_intention">保存添加</button>
+							<button type="button" class="layui-btn car_intention car_cancel">取消添加</button>
+						</div>
+					</div>
+				</div>
+							<!--工作经历-->
+					<div class="Work_Jingl padding_left_right_40 per_essential_information per_margin-bot15">
+						<div class="per_job_title cf">
+							<span class="Vertical_line"></span>
+							<h5 class="fl per_information_h5">工作经历</h5>
+							<a class="fr per_edit"><img src="../../../public/webBase/images/user/per_add.png" />添加</a>
+						</div>
+						{{if experiences.length == 0}}
+						<div class="per_job_content_no">
+							请添加您的工作经历
+						</div>
+						{{else}} {{each experiences}}
+						<ul class="per_job_option car_Work_Jingl">
+							<li class="per_work_experience">
+								<div class="per_work_li_title cf">
+									<div class="per_work_h5 fl">
+										<h5 class="fl">{{$value.name}}</h5>
+										<span class="fl">{{$value.workTime}}-{{$value.workEndTime}}</span>
+										<input type="hidden" name="sr_gongzuojingli" id="sr_gongzuojingli" value="" />
+										<!--<input type="text" name="car_updataWork_id" id="car_updataWork_id" value="{{experiences.id}}" />-->
+									</div>
+									<div class="per_job_button fr">
+										<div class="per_job_edit fr">
+											<a class="fr per_edit"><img src="../../../public/webBase/images/public/edit.png" />编辑</a>
+										</div>
+										<div class="per_job_edit_hover">
+											<div class="pos_edit1 fr carUpdataWorkEdit" updeta_work="{{$value.id}}">
+												<img src="../../../public/webBase/images/public/edit.png" />编辑
+											</div>
+											<div class="pos_del1 fr carUpdataWorkDelete" detele_work="{{$value.id}}">
+												<img src="../../../public/webBase/images/public/bin.png" />删除
+											</div>
+										</div>
+									</div>
+								</div>
+								<ul class="per_job_exhibition cf">
+									
+									<li class="fl">{{$value.position_name}}</li>
+									<!--<li class="fl">网络推广</li>-->
+								</ul>
+								<ul class="per_job_content_detail">
+									<li>{{$value.work_content}}</li>
+								</ul>
+							</li>
+						</ul>
+						{{/each}} {{/if}}
+					</div>
+					<!--添加工作经历-->
+					<div class="Add_work_experience car_intention_objective">
+						<h5>添加工作经历</h5>
+						<div class="car_intention_objective_form cf ">
+							<form class="layui-form" action="">
+								<div class="layui-form-item car_title cf">
+									<label class="layui-form-label">公司名称</label>
+									<div class="layui-input-block">
+										<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入公司名称" class="layui-input company_name">
+									</div>
+									<span class="add_error" id="car_add_error_work">请输入公司名称</span>
+								</div>
+								<div class="layui-form-item car_title cf select_input select_input_time">
+									<div class="layui-inline">
+										<label class="layui-form-label">在职时间</label>
+										<div class="layui-input-inline">
+											<input type="text" name="date_start_time" id="date_start_time" lay-verify="date_start_time" placeholder="请选择在职时间" autocomplete="off" class="layui-input">
+										</div>
+									</div>
+									<div class="layui-inline">
+										<div class="layui-input-inline">
+											<input type="text" name="date_end_time" id="date_end_time" lay-verify="date_end_time" placeholder="请选择离职时间" autocomplete="off" class="layui-input">
+										</div>
+									</div>
+									<span class="add_error" id="car_error_date_end_time">请填写您的在职时间</span>
+								</div>
+
+								<div class="layui-form-item car_title cf">
+									<div class="layui-inline">
+										<label class="layui-form-label">职位类别</label>
+										<div class="layui-input-inline fl" id="car_job_categories">
+											<el-cascader v-model="value" id="car_job_categories_eidt" :options="options" :props="{ expandTrigger: 'hover' }" @change="handleChange"></el-cascader>
+										</div>
+
+									</div>
+									<span class="add_error" id="car_job_categories_time">请填写您的职位</span>
+								</div>
+
+								<div class="layui-form-item car_text  cf car_textarea">
+									<label class="layui-form-label layui-required">工作内容</label>
+									<div class="layui-input-block">
+										<textarea placeholder="请输入内容" oninput="wordLeg(this);" maxlength="200" onpropertychange="if(value.length>100) value=value.substr(0,100)" name="desc" class="layui-textarea" id="car_work_content"></textarea>
+										<div class="word"><span class="text_count">0</span> / <span class="num_count" id="numCount">200</span></div>
+									</div>
+									<span class="add_error" id="car_error_work_content">请填写您的工作内容</span>
+								</div>
+							</form>
+							<div class="car_intention_objective_btn">
+								<button type="button" class="layui-btn car_intention car_add car_work_experience">保存添加</button>
+								<button type="button" class="layui-btn car_intention car_cancel car_cancel_work">取消添加</button>
+							</div>
+						</div>
+					</div>
+
+					<!--编辑工作经历-->
+					<div class="Add_work_experience_eidts car_intention_objective" style="display: none;">
+						<h5>编辑工作经历</h5>
+						<div class="car_intention_objective_form cf ">
+							<form class="layui-form" action="" lay-filter="car_work_experience_eidts">
+								<div class="layui-form-item car_title cf">
+									<label class="layui-form-label">公司名称</label>
+									<div class="layui-input-block">
+										<input type="hidden" name="car_end_workid" id="car_end_workid" value="" />
+										<input type="text" name="company_name_eidts" lay-verify="company_name_eidts" autocomplete="off" placeholder="请输入公司名称" class="layui-input company_name_eidts" id="company_name_eidts">
+									</div>
+									<span class="add_error" id="work_error_com">请填写公司名称</span>
+								</div>
+								<div class="layui-form-item car_title cf select_input select_input_time">
+									<div class="layui-inline">
+										<label class="layui-form-label">在职时间</label>
+										<div class="layui-input-inline">
+											<input type="text" name="date_start_time_eidts" id="date_start_time_eidts" lay-verify="date_start_time_eidts" placeholder="请选择在职时间" autocomplete="off" class="layui-input">
+										</div>
+									</div>
+									<div class="layui-inline">
+										<div class="layui-input-inline">
+											<input type="text" name="date_end_time_eidts" id="date_end_time_eidts" lay-verify="date_end_time_eidts" placeholder="请选择离职时间" autocomplete="off" class="layui-input">
+										</div>
+									</div>
+									<span class="add_error" id="work_error_time_eidts">请填写在职时间</span>
+								</div>
+								<div class="layui-form-item car_title cf">
+									<div class="layui-inline">
+										<label class="layui-form-label">职位类别</label>
+										<div class="layui-input-inline fl" id="car_job_categories_work" name="car_job_categories_work">
+											<el-cascader v-model="value" class="car_job_work_name" id="car_job_work_name" :options="options" :props="{ expandTrigger: 'hover' }" @change="handleChange"></el-cascader>
+
+										</div>
+										<span class="add_error" id="work_error_work_name">请填写职位类别</span>
+									</div>
+								</div>
+
+								<div class="layui-form-item car_text  cf car_textarea">
+									<label class="layui-form-label layui-required">工作内容</label>
+									<div class="layui-input-block">
+										<textarea placeholder="请输入内容" oninput="wordLeg(this);" maxlength="200" onpropertychange="if(value.length>100) value=value.substr(0,100)" name="car_work_textarea_eidts" class="layui-textarea" id="car_work_textarea_eidts"></textarea>
+										<div class="word"><span class="text_count">0</span> / <span class="num_count" id="numCount">200</span></div>
+									</div>
+									<span class="add_error" id="work_error_work_textarea_eidts">请填写在职时间</span>
+								</div>
+							</form>
+							<div class="car_intention_objective_btn">
+								<button type="button" class="layui-btn car_intention car_add car_work_experience_eidts_btn">保存添加</button>
+								<button type="button" class="layui-btn car_intention car_cancel car_cancel_work">取消添加</button>
+							</div>
+						</div>
+					</div>
+				<!--教育背景-->
+				<div class="Educational_background padding_left_right_40 per_essential_information per_margin-bot15">
+					<div class="per_job_title cf">
+						<span class="Vertical_line"></span>
+						<h5 class="fl per_information_h5">教育背景</h5>
+						<a class="fr per_edit"><img src="../../../public/webBase/images/user/per_add.png" />添加</a>
+					</div>
+					{{if background.length == 0}}
+					<div class="per_job_content_no">
+						请添加您的教育背景
+					</div>
+					{{else}}
+					{{each background}}
+					<ul class="per_job_option">
+						<li class="per_work_experience">
+							<div class="per_work_li_title cf">
+								<div class="per_work_h5 fl">
+									<h5 class="fl">{{$value.name}}</h5>
+									<span class="fl">{{$value.schoolTime}}-{{$value.schoolEndTime}}</span>
+								</div>
+								<div class="per_job_button fr">
+									<div class="per_job_edit fr">编辑</div>
+									<div class="per_job_edit_hover">
+										<div class="pos_edit1 fr car_educational_edit" update_id="{{$value.id}}">
+											<img src="../../../public/webBase/images/public/edit.png" />编辑
+										</div>
+										<div class="pos_del1 fr remove_education" delete_id="{{$value.id}}">
+											<img src="../../../public/webBase/images/public/bin.png" />删除
+										</div>
+									</div>
+								</div>
+							</div>
+							<ul class="per_job_exhibition cf">
+								<li class="fl">{{$value.specialty}}</li>
+								<li class="fl">{{$value.education_name}}</li>
+							</ul>
+						</li>
+					</ul>
+					{{/each}}
+				{{/if}}
+				</div>
+				<!--添加教育背景-->
+				<div class="Add_educational_background car_intention_objective">
+					<h5>添加教育背景</h5>
+					<div class="car_intention_objective_form cf ">
+						<form class="layui-form" action="" lay-filter="">
+							<div class="" id="txi"></div>
+							<div class="layui-form-item car_title cf">
+								<label class="layui-form-label">学校名称</label>
+								<div class="layui-input-block">
+									<input type="text" name="car_add_school" lay-verify="car_add_school" autocomplete="off" placeholder="请输入学校" class="layui-input limit_input" id="car_add_school">
+								</div>
+								<span class="add_error" id="car_add_error_school">请填写您的学校</span>
+							</div>
+							<div class="layui-form-item car_title cf pd30" id="">
+								<div class="layui-inline">
+									<label class="layui-form-label">学历范围</label>
+									<div class="layui-input-inline fl" id="">
+										<select name="car_education_id" lay-verify="car_education_id" lay-search="" id="car_education_id" >
+										<option value="">请选择</option>
+										<option value="5">初中及以下</option>
+										<option value="6">中专</option>
+										<option value="7">高中</option>
+										<option value="8">大专</option>
+										<option value="9">本科</option>
+										<option value="10">硕士</option>
+										<option value="11">博士</option>
+										</select>
+									</div>
+								</div>
+								<span class="add_error" id="car_add_error_education">请选择您的学历范围</span>
+							</div>
+							<div class="layui-form-item car_title cf">
+								<label class="layui-form-label">所学专业</label>
+								<div class="layui-input-block">
+									<input type="text" name="car_add_profession" lay-verify="car_add_profession" autocomplete="off" placeholder="请输入专业名称" class="layui-input" id="car_add_profession">
+								</div>
+								<span class="add_error" id="car_add_error_profession">请填写您的所学专业</span>
+							</div>
+							<div class="layui-form-item car_title cf select_input select_input_time pd30">
+								<div class="layui-inline">
+									<label class="layui-form-label">在职时间</label>
+									<div class="layui-input-inline">
+										<input type="text" name="" id="date_studied_time" lay-verify="date_studied_time" placeholder="入学时间" autocomplete="off" class="layui-input">
+									</div>
+									<!--<span>请选择您的就读时间</span>-->
+								</div>
+								<div class="layui-inline">
+									<div class="layui-input-inline">
+										<input type="text" name="date_studied_end" id="date_studied_end" lay-verify="date_studied_end" placeholder="毕业时间" autocomplete="off" class="layui-input">
+									</div>
+									<span class="add_error" id="car_add_error_studied_time">请选择您的毕业时间</span>
+								</div>
+							</div>
+						</form>
+						<div class="car_intention_objective_btn">
+							
+							<button type="button" class="layui-btn car_intention car_add" id="car_education" >保存添加</button>
+							<button type="button" class="layui-btn car_intention car_cancel">取消添加</button>
+						</div>
+					</div>
+				</div>
+				<!--编辑教育背景-->
+				<div class="edit_educational_background car_intention_objective" style="display: none;">
+					<h5>编辑教育背景</h5>
+					<div class="car_intention_objective_form cf">
+						<form class="layui-form" action="" lay-filter="edit_educational_background">
+							<div class="layui-form-item car_title cf" >
+								<label class="layui-form-label">学校名称</label>
+								<input type="hidden" name="car_end_id" id="car_end_id" value="" />
+								<div class="layui-input-block">
+									<input type="text" name="car_add_school_edit" lay-verify="car_add_school_edit" autocomplete="off" placeholder="请输入学校" class="layui-input limit_input" id="car_add_school_edit">
+								</div>
+								<span class="add_error" id="car_edit_error_school">请填写您的学校</span>
+							</div>
+							
+							<div class="layui-form-item car_title cf pd30" id="car_add_education_edit">
+								<div class="layui-inline">
+									<label class="layui-form-label">学历范围</label>
+									<div class="layui-input-inline fl" id="">
+										<select name="car_education_id_edit" lay-verify="car_education_id_edit" lay-search="" id="car_education_id_edit" >
+										<option value="">请选择</option>
+										<option value="5">初中及以下</option>
+										<option value="6">中专</option>
+										<option value="7">高中</option>
+										<option value="8">大专</option>
+										<option value="9">本科</option>
+										<option value="10">硕士</option>
+										<option value="11">博士</option>
+										</select>
+									</div>
+								</div>
+								<span class="add_error" id="car_edit_error_education">请选择您的学历范围</span>
+							</div>
+							<div class="layui-form-item car_title cf">
+								<label class="layui-form-label">所学专业</label>
+								<div class="layui-input-block">
+									<input type="text" name="car_add_profession_edit" lay-verify="car_add_profession_edit" autocomplete="off" placeholder="请输入专业名称" class="layui-input" id="car_add_profession_edit">
+								</div>
+								<span class="add_error" id="car_edit_error_profession">请填写您的所学专业</span>
+							</div>
+							<div class="layui-form-item car_title cf select_input select_input_time pd30">
+								<div class="layui-inline">
+									<label class="layui-form-label">在职时间</label>
+									<div class="layui-input-inline">
+										<input type="text" name="date_studied_time_edit" id="date_studied_time_edit" lay-verify="date_studied_time_edit" placeholder="yyyy-MM" autocomplete="off" class="layui-input">
+									</div>
+									
+								</div>
+								<div class="layui-inline">
+									<div class="layui-input-inline">
+										<input type="text" name="date_studied_end_edit" id="date_studied_end_edit" lay-verify="date_studied_end_edit" placeholder="yyyy-MM" autocomplete="off" class="layui-input">
+									</div>
+									
+								</div>
+								<span class="add_error" id="car_edit_error_studied_time">请选择您的就读时间</span>
+							</div>
+							
+						</form>
+						<div class="car_intention_objective_btn">
+							<button type="button" class="layui-btn car_intention car_add" id="car_education_edit" >保存添加</button>
+							<button type="button" class="layui-btn car_intention car_cancel">取消添加</button>
+						</div>
+					</div>
+				</div>
+				<!--自我评价-->
+				<div class="per_padding padding_left_right_40 per_essential_information sr_border_bottom0 per_self_evaluation_edit">
+					<div class="per_job_title cf">
+						<span class="Vertical_line"></span>
+						<h5 class="fl per_information_h5">自我评价</h5>
+						<a class="fr per_edit per_edit_self"><img src="../../../public/webBase/images/public/edit.png" />编辑</a>
+					</div>
+					{{if !information.self_appraise || information.self_appraise.length == 0}}
+					<div class="per_job_content_no">
+						请添加您的自我评价
+					</div>
+					{{else}}
+					<ul class="per_job_option">
+						<ul class="per_job_content_detail per_work_experience">
+							<li>{{information.self_appraise}}</li>
+						</ul>
+					</ul>
+					{{/if}}
+				</div>
+				<!--编辑自我评价-->
+				<div class="car_intention_objective per_self_evaluation">
+					<h5>编辑自我评价</h5>
+					<div class="car_intention_objective_form cf ">
+						<form class="layui-form" action="" lay-filter="edit_intention_objective">
+							<div class="layui-form-item car_text  cf car_textarea">
+								<label class="layui-form-label layui-required">自我评价</label>
+								<div class="layui-input-block">
+									<textarea placeholder="请输入内容" oninput="wordLeg(this);" maxlength="200" onpropertychange="if(value.length>100) value=value.substr(0,100)" name="desc" class="layui-textarea" id="SelfEvaluationVal"></textarea>
+									<div class="word"><span class="text_count">0</span> / <span class="num_count" id="numCount">200</span></div>
+								</div>
+								<span class="add_error" id="error_SelfEvaluationVal">请填写您的评价</span>
+							</div>
+						</form>
+						<div class="car_intention_objective_btn">
+							<button type="button" class="layui-btn car_intention car_add" id="SelfEvaluation">保存添加</button>
+							<button type="button" class="layui-btn car_intention car_cancel">取消添加</button>
+						</div>
+					</div>
+				</div>
+				<!--预览简历-->
+				<!--遮罩层-->
+				<div class="preview_resume_bg">
+					<div class="sr_preview_overflow">
+				<div class="preview_resume_box" id='preview_resume_box'>
+							<!--更新时间  —— 头像-->
+				<div class="per_top padding_left_right_40">
+					<div class="per_head_portrait">
+						<div class="per_photo">
+							<img src="{{users.photo}}" />
+						</div>
+						<div class="per_name_Gender">
+							<span class="per_name">{{information.reality_name}}</span>
+							{{if users.sex == 0}}
+							<img src="../../../public/webBase/images/user/per_nan.png" class="" title="性别" alt="性别" />
+							{{else}}
+							<img src="../../../public/webBase/images/user/per_nv.png" class="" title="性别" alt="性别" />
+							{{/if}}
+						</div>
+					</div>
+				</div>
+				<!--基本信息-->
+				<div class="per_essential_information padding_left_right_40 per_information_none basic_information">
+					<div class="per_essential_title cf">
+						<h5 class="fl per_information_h5">基本信息</h5>
+					</div>
+					<ul class="per_year_ul cf">
+						<!--年龄-->
+						{{if users.userAge == '' || users.userAge == null}}
+						<li class="per_year_li fl">年龄</li>
+						{{else}}
+						<li class="per_year_li fl">{{users.userAge}}岁</li>
+						{{/if}}
+						<!--民族-->
+						{{if information.race_name == '' || information.race_name == null}}
+						<li class="per_year_li fl">民族</li>
+						{{else}}
+						<li class="per_year_li fl">{{information.race_name}}</li>
+						{{/if}}
+						<!--//城市-->
+						{{if information.city_name == '' || information.city_name == null}}
+						<li class="per_year_li fl">北京</li>
+						{{else}}
+						<li class="per_year_li fl">{{information.city_name}}</li>
+						{{/if}}
+					</ul>
+					<div class="per_iphone_and_email cf">
+						<!--手机-->
+						<div class="per_iphone fl">
+							<img src="../../../public/webBase/images/user/per_phone.png" />
+							{{if information.mobile == '' || information.mobile == null}}
+							<span class="">未填写</span>
+							{{else}}
+							<span class="">{{information.mobile}}</span>
+							{{/if}}
+						</div>
+						<!--邮箱-->
+						<div class="per_iemail fl">
+							<img src="../../../public/webBase/images/user/per_email.png" />
+							{{if information.email == '' || information.email == null}}
+							<span class="">未填写</span>
+							{{else}}
+							<span class="">{{information.email}}</span>
+							{{/if}}
+						</div>
+					</div>
+				</div>
+				<!--求职意向-->
+				<div class=" padding_left_right_40 per_essential_information Job_intention">
+					<div class="per_job_title cf">
+						<h5 class="fl per_information_h5">求职意向</h5>
+					</div>
+					<!--无信息时提示-->
+					{{if positionList == '' || positionList == null}}
+					<div class="per_job_content_no">
+						请添加您的求职意向
+					</div>
+					{{else}}
+					<!--有信息时提示-->
+					<div class="per_job_content" id="per_job_intention">
+						{{each positionList}} <!--//true-->
+							<!--有竖线时   —— 即有一条数据值时-->
+							<div class="per_job_option cf">
+								<ul class="per_job_exhibition fl">
+									<li class="fl">{{$value.positionname}}</li>
+									<li class="fl">{{$value.salary}}</li>
+									<li class="fl">{{$value.cityname}}</li>
+									<!--获取的职位id-->
+									<input type="hidden" name="per_position_id" id="per_position_id" value="{{$value.position_id}}" />
+									<!--获取的城市id-->
+									<input type="hidden" name="per_city_id" id="per_city_id" value="{{$value.workcity_id}}" />
+									<input type="hidden" name="per_city_idlll" id="per_city_idlll" value="{{$value.id}}" />
+									<!--获取当前有几条数据-->
+									<input type="hidden" name="per_job_position_length" id="per_job_position_length" value="" />
+								</ul>
+							</div>
+						{{/each}}
+					</div>
+					{{/if}}
+				</div>
+					<!--工作经历-->
+				<div class="Work_Jingl padding_left_right_40 per_essential_information per_margin-bot15">
+					<div class="per_job_title cf">
+						<h5 class="fl per_information_h5">工作经历</h5>
+					</div>
+					{{if experiences.length == 0}}
+					<div class="per_job_content_no">
+						请添加您的工作经历
+					</div>
+					{{else}} {{each experiences}}
+					<ul class="per_job_option car_Work_Jingl">
+						<li class="per_work_experience">
+							<div class="per_work_li_title cf">
+								<div class="per_work_h5 fl">
+									<h5 class="fl">{{$value.name}}</h5>
+									<span class="fl">{{$value.workTime}}-{{$value.workEndTime}}</span>
+								</div>
+							</div>
+							<ul class="per_job_exhibition cf">
+								
+								<li class="fl">{{$value.position_name}}</li>
+							</ul>
+							<ul class="per_job_content_detail">
+								<li>{{$value.work_content}}</li>
+							</ul>
+						</li>
+					</ul>
+					{{/each}} {{/if}}
+				</div>
+				<!--教育背景-->
+				<div class="Educational_background padding_left_right_40 per_essential_information per_margin-bot15">
+					<div class="per_job_title cf">
+						<h5 class="fl per_information_h5">教育背景</h5>
+					</div>
+					{{if background.length == 0}}
+					<div class="per_job_content_no">
+						请添加您的教育背景
+					</div>
+					{{else}}
+					{{each background}}
+					<ul class="per_job_option">
+						<li class="per_work_experience">
+							<div class="per_work_li_title cf">
+								<div class="per_work_h5 fl">
+									<h5 class="fl">{{$value.name}}</h5>
+									<span class="fl">{{$value.schoolTime}}-{{$value.schoolEndTime}}</span>
+								</div>
+							</div>
+							<ul class="per_job_exhibition cf">
+								<li class="fl">{{$value.specialty}}</li>
+								<li class="fl">{{$value.education_name}}</li>
+							</ul>
+						</li>
+					</ul>
+					{{/each}}
+				{{/if}}
+				</div>
+				<!--自我评价-->
+				<div class="per_padding padding_left_right_40 per_essential_information sr_border_bottom0 per_self_evaluation_edit">
+					<div class="per_job_title cf">
+						<h5 class="fl per_information_h5">自我评价</h5>
+					</div>
+					{{if !information.self_appraise || information.self_appraise.length == 0}}
+					<div class="per_job_content_no">
+						请添加您的自我评价
+					</div>
+					{{else}}
+					<ul class="per_job_option">
+						<ul class="per_job_content_detail per_work_experience">
+							<li>{{information.self_appraise}}</li>
+						</ul>
+					</ul>
+					{{/if}}
+				</div>
+				</div>
+				<!--遮罩层关闭-->
+				<div class="preview_close_and_download">
+					<div class="preview_close" id="preview_close_id">
+						<img src="../../../public/webBase/images/user/cha.png"/>
+						<div class="close_white close_white_close">关  闭   预  览</div>
+					</div>
+				</div>
+			</div>                
+				<!--预览简历end-->
+			</script>
+				
+		</div>
+		<div class="layui-tab-item white_background">
+			职位推荐
+		</div>
+	</div>
+</div>
+</div>
+</div>

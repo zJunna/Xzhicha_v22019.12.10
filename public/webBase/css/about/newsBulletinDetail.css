@@ -1,0 +1,165 @@
+/*新闻公告详请页*/
+
+
+/*banner */
+
+
+/*图片上的蒙层*/
+
+.bg_color {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(rgba(38, 32, 83, 0.7), rgba(25, 25, 74, 0.7));
+}
+
+.news_placard_banner {
+	width: 100%;
+	height: 400px;
+	background: url(../../images/index/index_rz.png)no-repeat;
+	background-size: 100% 100%;
+}
+
+.news_placard_banner h3 {
+	padding-top: 137px;
+	font-size: 60px;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+	text-align: center;
+}
+
+.news_placard_banner p {
+	margin-top: 20px;
+	font-size: 20px;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 1);
+	text-align: center;
+}
+
+
+/*内容*/
+
+.w1200 {
+	width: 1200px;
+	height: auto;
+	margin: auto;
+	background: #FFFFFF;
+}
+
+.news_position {
+	padding-top: 20px;
+}
+
+.news_position span {
+	display: block;
+	width: 13px;
+	height: 13px;
+	border: 2px solid rgba(97, 108, 255, 1);
+	border-radius: 50%;
+	margin-right: 2px;
+	margin-top: 4px;
+}
+
+.news_position p {
+	font-size: 16px;
+	font-weight: 400;
+	color: rgba(153, 153, 153, 1);
+}
+
+
+/*内容*/
+
+.bulletin_center {
+	width: 100%;
+	height: auto;
+}
+
+.bulletin_center h2 {
+	font-size: 28px;
+	font-weight: bold;
+	color: rgba(51, 51, 51, 1);
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+
+/*分享*/
+
+.bulletin_share {
+	border-bottom: 1px solid rgba(204, 204, 204, 1);
+	padding-bottom: 15px;
+	margin-bottom: 30px;
+}
+
+.bulletin_share .bulletin_share_left {
+	margin-left: 40px;
+}
+
+.bulletin_share .bulletin_share_left span {
+	font-size: 14px;
+	font-weight: 400;
+	color: rgba(153, 153, 153, 1);
+	line-height: 21px;
+	display: block;
+}
+
+.bulletin_share .bulletin_share_left .mr10 {
+	margin-right: 10px;
+}
+
+.bulletin_share .bulletin_share_left span img {
+	width: 20px;
+	height: 20px;
+}
+
+
+/*时间*/
+
+.bulletin_share .bulletin_share_right {
+	margin-right: 40px;
+	font-size: 14px;
+	font-weight: 400;
+	color: rgba(153, 153, 153, 1);
+	line-height: 21px;
+}
+
+.bulletin_share .bulletin_share_right span {
+	margin-left: 30px;
+}
+
+
+/*内容详请*/
+
+.bulletin_center_detail {
+	padding: 0 40px;
+}
+
+.bulletin_center_detail p {
+	font-size: 14px;
+	font-weight: 400;
+	color: rgba(51, 51, 51, 1);
+	line-height: 21px;
+}
+
+.bulletin_center_detail img {
+	display: block;
+	margin: 30px auto;
+	max-width: 750px;
+}
+
+
+/*免责说明*/
+
+.Disclaimer {
+	padding: 25px;
+	width: 1120px;
+	height: 88px;
+	margin: 30px auto;
+	border: 1px solid rgba(204, 204, 204, 1);
+}
+
+.Disclaimer p {
+	font-size: 14px;
+	font-weight: 400;
+	color: rgba(102, 102, 102, 1);
+}

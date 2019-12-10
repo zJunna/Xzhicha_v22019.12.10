@@ -1,0 +1,10 @@
+/*账户部分*/
+.account_part{background: #f2f3f4;}
+.container{width: 1200px;margin: auto;}
+/*左边部分*/
+.account_l{width: 50%;height: 700px;background: url(../../images/user/login_banner.png);cursor: default;}
+.account_font{margin-top: 200px;background:rgba(51,51,51,0.3);height: 300px;color: #fff;}
+.account_title1,.account_title2{margin-left: 144px;font-size: 60px;font-weight:500;line-height:60px;}
+.account_title1{padding-top: 30px;}
+.account_title2{margin-top: 20px;}
+.account_introduce{margin-top: 30px;margin-left: 144px;width:352px;font-size:16px;font-weight:400;line-height:30px;}

@@ -1,0 +1,390 @@
+<!-- 实名认证 -->
+<link rel="stylesheet" type="text/css" href="../../../public/webBase/css/user/realName/realNameCo.css"/>
+<script src="../../../public/webBase/js/user/realName/realNameCo.js" type="text/javascript" charset="utf-8"></script>
+<!--上传图片-->
+<script type="text/javascript" src="../../../public/webBase/js/user/myAccount/jquery-2.0.js"></script>
+<script type="text/javascript" src="../../../public/webBase/js/ajaxfileupload.js"></script>  
+<script type="text/javascript" src="../../../public/webBase/js/user/myAccount/jquery.json-2.4.min.js"></script>
+
+<div class="co_real_name">
+	<div class="co_title">企业实名认证</div>
+	<!--是否实名认证-->
+	<div id="is_real_name_co"></div>
+	<script id="is_real_name_template" type="text/html">
+		<!--未实名-->
+		{{if authentication_status == 0 || authentication_status == 1 || authentication_status == 4 || authentication_status == 6}}
+		<div class="co_part_no">
+			<!--未实名-->
+			{{if authentication_status == 0 || authentication_status == 1}}
+				<p class="co_part_tip">实名认证后，您将成为X职查认证企业，享有更多特权</p>
+			{{/if}}
+			<!--失败-->
+			{{if authentication_status == 4 || authentication_status == 6}}
+				<div class="co_part_tip_suc">
+					<div class="suc_tip_fail cf">
+						<span class="fl">企业实名认证失败</span>
+						<div class="fl" style="margin-left: 10px;line-height: 22px;">
+							<img src="../../../public/webBase/images/user/real_ame_fail.png"/>
+						</div>
+					</div>
+				</div>
+			{{/if}}
+			<form class="layui-form real_form">
+	
+				<div class="layui-form-item layui-form-item1">
+					<span class="fl real_require">*</span>
+					<label class="layui-form-label layui-form-label1">企业名称</label>
+					<div class="layui-input-block">
+						<input type="text" id="co_real_name" placeholder="请输入企业名称" autocomplete="off" class="layui-input real_input fl" maxlength="20" autocomplete="off">
+						<div class="real_tip_1 fl">请输入企业名称</div>
+					</div>
+				</div>
+	
+				<div class="layui-form-item layui-form-item1">
+					<span class="fl real_require">*</span>
+					<label class="layui-form-label layui-form-label1">信用代码</label>
+					<div class="layui-input-block">
+						<input type="text" id="credit_code" placeholder="请输入信用代码" autocomplete="off" class="layui-input real_input fl" maxlength="20" autocomplete="off">
+						<div class="real_tip_2 fl">请输入正确信用代码</div>
+					</div>
+				</div>
+	
+				<div class="layui-form-item layui-form-item1">
+					<span class="fl real_require">*</span>
+					<label class="layui-form-label layui-form-label1">地区选择</label>
+					<div class="layui-input-block">
+						<div class="layui-input-inline layui-input-inline1">
+							<select name="province" id="real_province" lay-search lay-filter="province">
+								<option value="">省份</option>
+							</select>
+						</div>
+						<div class="layui-input-inline layui-input-inline1">
+							<select name="city" id="real_city" lay-search lay-filter="city">
+								<option value="">市区</option>
+							</select>
+						</div>
+						<div class="real_tip_3 fl">请选择省份</div>
+						<div class="real_tip_4 fl">请选择市区</div>
+					</div>
+				</div>
+	
+				<div class="layui-form-item layui-form-item1">
+					<span class="fl real_require">*</span>
+					<label class="layui-form-label layui-form-label1">营业执照</label>
+					<div class="layui-input-block layui-input-block1">
+						<div class="co_real_bor_dashed fl">
+							<div class="co_real_bor_solid">
+								<div class="sc_yyzz">
+									<img class="co_real_yyzz_upload" src="" name="img_marks" mark="5" id="yyzz_1"/>
+									<div class="yyzz_zz preview">
+										<div class="yyzz_close"></div>
+										<span>查看营业执照</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="co_real_bor_dashed fl">
+							<div class="co_real_bor_solid">
+								<div class="sc_yyzz">
+									<img class="co_real_yyzz_upload" src="" name="img_marks" mark="5" id="yyzz_2"/>
+									<div class="yyzz_zz preview">
+										<div class="yyzz_close"></div>
+										<span>查看营业执照</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="co_real_bor_dashed fl">
+							<div class="co_real_bor_solid co_sc_btn_box">
+								<div class="sc_box">
+									<img class="sc_img_jia" src="../../../public/webBase/images/user/sc_img.png"/>
+									<p class="sc_title">上传营业执照</p>
+								</div>
+								<input type="file" name="imgFile" id="co_yyzz_sc1" class="co_sc_btn" onchange="uploadImage('co_yyzz_sc1','yyzz_1')" />
+								<input type="file" name="imgFile" id="co_yyzz_sc2" class="co_sc_btn" onchange="uploadImage('co_yyzz_sc2','yyzz_2')" />
+							</div>
+						</div>
+						<div class="real_tip_5">请上传营业执照</div>
+					</div>
+					<div class="layui-input-block layui-input-block2">
+						<p>1、图片需清晰：注册号、企业名称、法人代表、年检查等需清晰可辨认 </p>
+						<p>2、请使用5M以下的JPG/PNG图片，最多可上传2张相关图</p>
+					</div>
+				</div>
+	
+				<div class="layui-form-item layui-form-item1">
+					<span class="fl real_require">*</span>
+					<label class="layui-form-label layui-form-label1">HR联系人</label>
+					<div class="layui-input-block">
+						<input type="text" id="co_hr_contact" placeholder="请输入HR联系人" autocomplete="off" class="layui-input real_input fl" maxlength="20" autocomplete="off">
+						<div class="real_tip_6 fl">请输入HR联系人</div>
+					</div>
+				</div>
+	
+				<div class="layui-form-item layui-form-item1">
+					<span class="fl real_require">*</span>
+					<label class="layui-form-label layui-form-label1">联系电话</label>
+					<div class="layui-input-block">
+						<input type="text" id="co_phone_no" placeholder="请输入联系电话" autocomplete="off" class="layui-input real_input fl" maxlength="20" autocomplete="off">
+						<div class="real_tip_7 fl">请输入正确的电话号码</div>
+					</div>
+				</div>
+	
+				<div class="layui-form-item layui-form-item1">
+					<span class="fl real_require">*</span>
+					<label class="layui-form-label layui-form-label1">工作证明</label>
+					<div class="layui-input-block layui-input-block1">
+						<div class="co_real_bor_dashed fl">
+							<div class="co_real_bor_solid">
+								<div class="sc_yyzz">
+									<img class="co_real_gzzm_upload" src="" name="img_marks" mark="4" id="gzzm_1"/>
+									<div class="yyzz_zz preview">
+										<div class="yyzz_close"></div>
+										<span>查看工作证明</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="co_real_bor_dashed fl">
+							<div class="co_real_bor_solid">
+								<div class="sc_yyzz">
+									<img class="co_real_gzzm_upload" src="" name="img_marks" mark="4" id="gzzm_2"/>
+									<div class="yyzz_zz preview">
+										<div class="yyzz_close"></div>
+										<span>查看工作证明</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="co_real_bor_dashed fl">
+							<div class="co_real_bor_solid co_sc_btn_box">
+								<div class="sc_box">
+									<img class="sc_img_jia" src="../../../public/webBase/images/user/sc_img.png"/>
+									<p class="sc_title">上传工作证明</p>
+								</div>
+								<input type="file" name="imgFile" id="co_gzzm_sc1" class="co_sc_btn" onchange="uploadImage('co_gzzm_sc1','gzzm_1')" />
+								<input type="file" name="imgFile" id="co_gzzm_sc2" class="co_sc_btn" onchange="uploadImage('co_gzzm_sc2','gzzm_2')" />
+							</div>
+						</div>
+						<div class="real_tip_8">请上传工作证明</div>
+					</div>
+					<div class="layui-input-block layui-input-block2">
+						<p>1、图片需清晰：企业名称、被证人姓名、公司印章等需清晰可辨认 </p>
+						<p>2、请使用5M以下的JPG/PNG图片，最多可上传2张相关图片</p>
+					</div>
+				</div>
+				<div class="layui-form-item layui-form-item1">
+					<div class="layui-input-block">
+						<button type="submit" class="layui-btn real_sub" lay-submit="" lay-filter="real_sub">提交认证</button>
+					</div>
+				</div>
+			</form>
+			<div class="real_sub_tip">
+				<p>请确保注册手机号和联系电话能够联系到您，否则上传的信息可能被删除</p>
+			</div>
+		</div>
+		<!--未实名结束-->
+		{{else}}
+		<!--实名认证审核中、成功-->
+		<div class="co_part_no">
+			<!--待审核-->
+			{{if authentication_status == 3 || authentication_status == 5}}
+				<div class="co_part_tip_suc">
+					<div class="suc_tip_wait1 cf">
+						<span class="fl">企业实名认证审核中</span>
+						<div class="fl" style="margin-left: 10px;line-height: 22px;">
+							<img src="../../../public/webBase/images/user/real_ame_wait.png"/>
+						</div>
+					</div>
+					<div class="suc_tip_wait2">您提交的信息在审核中，审核时间为1~3个工作日</div>
+				</div>
+			{{/if}}
+			{{if authentication_status == 2 || authentication_status == 7}}
+				<div class="co_part_tip_suc">
+					<div class="suc_tip_suc cf">
+						<span class="fl">企业实名认证成功</span>
+						<div class="fl" style="margin-left: 10px;line-height: 22px;">
+							<img src="../../../public/webBase/images/user/real_ame_suc.png"/>
+						</div>
+					</div>
+				</div>
+			{{/if}}
+			<form class="layui-form real_form">
+				<!--企业名称-->
+				<div class="layui-form-item layui-form-item1">
+					<label class="layui-form-label layui-form-label1">企业名称：</label>
+					<div class="layui-input-block co_input_block">{{company_name}}</div>
+				</div>
+				<!--信用代码-->
+				<div class="layui-form-item layui-form-item1">
+					<label class="layui-form-label layui-form-label1">信用代码：</label>
+					<div class="layui-input-block co_input_block">{{company_code}}</div>
+				</div>
+				<!--地区选择-->
+				<div class="layui-form-item layui-form-item1">
+					<label class="layui-form-label layui-form-label1">地区选择：</label>
+					<div class="layui-input-block co_input_block">
+						<span style="margin-right: 20px;">{{provinces_name}}</span>
+						<span>{{city_Name}}</span>
+					</div>
+				</div>
+				<!--营业执照-->
+				<div class="layui-form-item layui-form-item1">
+					<label class="layui-form-label layui-form-label1">营业执照：</label>
+					<div class="layui-input-block layui-input-block1 co_input_block">
+						{{each comImages}}
+						<div class="co_real_bor_dashed fl">
+							<div class="co_real_bor_solid">
+								<div class="sc_yyzz">
+									<img class="co_real_yyzz_upload" src="{{$value.image_filename}}"/>
+									<div class="yyzz_zz preview">
+										<span>查看营业执照</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						{{/each}}
+					</div>
+				</div>
+				<!--HR联系人-->
+				<div class="layui-form-item layui-form-item1">
+					<label class="layui-form-label layui-form-label1">HR联系人：</label>
+					<div class="layui-input-block co_input_block">{{company_hr_name}}</div>
+				</div>
+				<!--联系电话-->
+				<div class="layui-form-item layui-form-item1">
+					<label class="layui-form-label layui-form-label1">联系电话：</label>
+					<div class="layui-input-block co_input_block">{{hr_mobile}}</div>
+				</div>
+				<!--工作证明-->
+				<div class="layui-form-item layui-form-item1">
+					<label class="layui-form-label layui-form-label1">工作证明：</label>
+					<div class="layui-input-block layui-input-block1 co_input_block">
+						{{each hrImages}}
+						<div class="co_real_bor_dashed fl">
+							<div class="co_real_bor_solid">
+								<div class="sc_yyzz">
+									<img class="co_real_gzzm_upload" src="{{$value.image_filename}}"/>
+									<div class="yyzz_zz preview">
+										<span>查看工作证明</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						{{/each}}
+					</div>
+				</div>
+			</form>
+			<div class="real_sub_tip">
+				{{if authentication_status == 3 || authentication_status == 5}}
+					<p>如需修改企业认证信息，请联系客服400-6093-818</p>
+				{{/if}}
+				{{if authentication_status == 2 || authentication_status == 7}}
+					<p>企业实名认证已成功，无法修改</p>
+				{{/if}}
+			</div>
+		</div>
+		<!--实名认证审核中、成功结束-->
+		{{/if}}
+	</script>
+</div>
+<!--图片放大显示-->
+<div class="mask">
+	<div class="mask_close"></div>
+	<img id="big_img_show" src=""/>
+</div>
+<script type="text/javascript">
+	//图片上传
+	function uploadImage(fileElementId, imageElementId) {
+		var path = $("#" + fileElementId).val();
+		if(path == "") {
+			alert("请选择上传的图片");
+			return;
+		}
+		$.ajaxFileUpload({
+			url: apiImg + "FileUpload/uploadImage",
+			secureuri: false,
+			fileElementId: fileElementId,
+			dataType: 'text',
+			success: function(data) {
+				data = $.evalJSON(data);
+				console.log(data)
+				if(data.code < 0) {
+					layer.alert(data.msg, {title: 'X职查'})
+					return;
+				}
+				$("#" + imageElementId).attr("src", data.filename);
+				show_img();
+			},
+			error: function(data, status, e) {
+				layer.alert('上传图片失败', {title: 'X职查'})
+			}
+		})
+	}
+	//图片显示
+	show_img();
+	function show_img(){
+		//判断上传按钮是否显示
+		//营业执照
+//		console.log('营业执照1 = '+$('#yyzz_1').attr('src'))
+//		console.log('营业执照2 = '+$('#yyzz_2').attr('src'))
+//		console.log('工作证明1 = '+$('#gzzm_1').attr('src'))
+//		console.log('工作证明2 = '+$('#gzzm_2').attr('src'))
+		if($('#yyzz_1').attr('src') == ''){
+			$('#yyzz_1').parent().parent().parent().hide();
+			$('#co_yyzz_sc1').show();
+			$('#co_yyzz_sc1').parent().parent().show();
+		}else{
+			$('#yyzz_1').parent().parent().parent().show();
+			$('#co_yyzz_sc1').hide();
+		}
+		if($('#yyzz_2').attr('src') == ''){
+			$('#yyzz_2').parent().parent().parent().hide();
+			$('#co_yyzz_sc2').show();
+			$('#co_yyzz_sc1').parent().parent().show();
+		}else{
+			$('#yyzz_2').parent().parent().parent().show();
+			$('#co_yyzz_sc2').hide();
+		}
+		if($('#yyzz_1').attr('src') == '' && $('#yyzz_2').attr('src') == ''){
+			$('#co_yyzz_sc1').show();
+			$('#co_yyzz_sc2').hide();
+			$('#co_yyzz_sc1').parent().parent().show();
+		}else if($('#yyzz_1').attr('src') != '' && $('#yyzz_2').attr('src') != ''){
+			$('#co_yyzz_sc1').parent().parent().hide();
+			$('#co_yyzz_sc2').parent().parent().hide();
+		}
+		//工作证明
+		if($('#gzzm_1').attr('src') == ''){
+			$('#gzzm_1').parent().parent().parent().hide();
+			$('#co_gzzm_sc1').show();
+			$('#co_gzzm_sc1').parent().parent().show();
+		}else{
+			$('#gzzm_1').parent().parent().parent().show();
+			$('#co_gzzm_sc1').hide();
+		}
+		if($('#gzzm_2').attr('src') == ''){
+			$('#gzzm_2').parent().parent().parent().hide();
+			$('#co_gzzm_sc2').show();
+			$('#co_gzzm_sc1').parent().parent().show();
+		}else{
+			$('#gzzm_2').parent().parent().parent().show();
+			$('#co_gzzm_sc2').hide();
+		}
+		if($('#gzzm_1').attr('src') == '' && $('#gzzm_2').attr('src') == ''){
+			$('#co_gzzm_sc1').show();
+			$('#co_gzzm_sc2').hide();
+			$('#co_gzzm_sc1').parent().parent().show();
+		}else if($('#gzzm_1').attr('src') != '' && $('#gzzm_2').attr('src') != ''){
+			$('#co_gzzm_sc1').parent().parent().hide();
+			$('#co_gzzm_sc2').parent().parent().hide();
+		}
+	}
+	//删除图片
+	$('.yyzz_close').click(function(e){
+		e.stopPropagation();
+		$(this).parent().prev().attr('src','');
+		$(this).parent().parent().parent().parent().hide();
+		show_img();
+	})
+</script>

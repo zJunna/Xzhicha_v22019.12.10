@@ -1,0 +1,94 @@
+<!-- 实名认证 -->
+<link rel="stylesheet" type="text/css" href="../../../public/webBase/css/user/realName/realNamePer.css"/>
+<script src="../../../public/webBase/js/user/realName/realNamePer.js" type="text/javascript" charset="utf-8"></script>
+
+<div class="user_real_name">
+	<div class="personal_title">个人实名认证</div>
+	<!--是否实名认证-->
+	<div id="is_real_name"></div>
+	<script id="is_real_name_template" type="text/html">
+		{{if authentication_status == 1 || authentication_status == 5 || authentication_status == 6 || authentication_status == 7}}
+			<!--实名认证成功-->
+			<div class="person_part_success">
+				<div class="person_success_img">
+					<img src="../../../public/webBase/images/user/person_rz_success.png"/>
+				</div>
+				<p class="person_success_p1">恭喜您，个人实名认证已成功！</p>
+				<p class="person_success_p2">您提交的认证资料已通过审核</p>
+				<div class="person_success_details">
+					<p>
+						<span>姓　　名：</span>
+						<span>{{realityName}}</span>
+					</p>
+					<p>
+						<span>身份证号：</span>
+						<span>{{idNumber}}</span>
+					</p>
+				</div>
+				<div class="person_rz_success">个人实名认证已成功，无法修改</div>
+			</div>
+		{{else}}
+			{{if person_rz == 'fail'}}
+				<!--实名认证失败-->
+				<div class="person_part_fail">
+					<div class="person_fail_img">
+						<img src="../../../public/webBase/images/user/person_rz_fail.png"/>
+					</div>
+					<p class="person_fail_p1">个人实名认证失败！</p>
+					<p class="person_fail_p2">请注意您填写的资料是否匹配</p>
+					<button class="layui-btn person_rz_reset">重新认证</button>
+				</div>
+			{{else}}
+				<!--未实名-->
+				<div class="person_part_no">
+					<p class="person_part_tip">实名认证后，您将成为X职查认证用户，享有更多特权</p>
+					<form class="layui-form real_form">
+						<div class="layui-form-item layui-form-item1">
+							<span class="fl real_require">*</span>
+							<label class="layui-form-label layui-form-label1">姓　　名</label>
+							<div class="layui-input-block">
+								<input type="text" id="user_real_name" placeholder="请输入真实姓名" autocomplete="off" class="layui-input real_input" maxlength="20" autocomplete="off">
+								<div class="real_tip_1">请输入正确的姓名</div>
+							</div>
+						</div>
+						<div class="layui-form-item layui-form-item1">
+							<span class="fl real_require">*</span>
+							<label class="layui-form-label layui-form-label1">身份证号</label>
+							<div class="layui-input-block">
+								<input type="text" id="user_real_id" placeholder="请输入身份证号码" autocomplete="off" class="layui-input real_input" maxlength="20" autocomplete="off">
+								<div class="real_tip_2">请输入正确的身份证号码</div>
+							</div>
+						</div>
+						<div class="layui-form-item layui-form-item1">
+							<span class="fl real_require">*</span>
+							<label class="layui-form-label layui-form-label1">地　　区</label>
+							<div class="layui-input-block">
+								<div class="layui-input-inline layui-input-inline1">
+									<select name="province" id="real_province" lay-search lay-filter="province">
+										<option value="">省份</option>
+									</select>
+									<div class="real_tip_3">请选择省份</div>
+								</div>
+								<div class="layui-input-inline layui-input-inline1">
+									<select name="city" id="real_city" lay-search lay-filter="city">
+										<option value="">市区</option>
+									</select>
+									<div class="real_tip_4">请选择市区</div>
+								</div>
+							</div>
+						</div>
+						<div class="layui-form-item layui-form-item1">
+							<div class="layui-input-block">
+								<button type="submit" class="layui-btn real_sub" lay-submit="" lay-filter="real_sub">提交认证</button>
+							</div>
+						</div>
+					</form>
+					<div class="real_sub_tip">
+						<p>用户提交的申请信息，只作为审核使用，不会在页面公开展示</p>
+						<p>请确保注册手机号和联系电话能够联系到您，否则上传的信息可能被删除。</p>
+					</div>
+				</div>
+			{{/if}}
+		{{/if}}
+	</script>
+</div>

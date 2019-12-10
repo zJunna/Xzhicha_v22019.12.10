@@ -1,0 +1,381 @@
+/* 修改个人信息页面 */
+
+#pic {
+	position: absolute;
+	left: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+
+#sr_position_relative {
+	position: relative;
+	margin-top: 11px;
+	width: 50%;
+	cursor: pointer;
+}
+
+.person_big_bg_con,.person_big_bg,.person_set_pad_bg,.person_get_pad_bg,.sr_set_email,.sr_get_email,.person_get_phone{
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	/*z-index: 999;*/
+	background-color: rgba(0, 0, 0, 0.3);
+	width: 100%;
+	height: 100%;
+}
+
+.person_info_bg {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	z-index: 10000;
+	display: none;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+}
+
+.person_info_con {
+	margin: 0 auto;
+	width: 500px;
+	background: #ffffff;
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+.person_close {
+	text-align: right;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.person_close img {
+	width: 16px;
+	height: 16px;
+	margin: 20px 20px 24px 0;
+}
+
+.person_tit {
+	font-size: 28px;
+	font-weight: 400;
+	color: rgba(97, 108, 255, 1);
+}
+
+.person_photo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.person_photo_img {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-top: 40px;
+}
+
+.person_photo_img img {
+	width: 100%;
+	height: 100%;
+}
+
+.sr_photo_tip {
+	margin-top: 11px;
+	font-size: 14px;
+	font-weight: 400;
+	color: rgba(97, 108, 255, 1);
+}
+
+.sr_form_person {
+	margin: 40px 80px;
+}
+
+.sr_margin_left {
+	margin-left: 42px;
+}
+
+.sr_name_per {
+	width: 32px;
+	font-size: 16px;
+	margin-right: 10px;
+	font-weight: 400;
+	color: rgba(51, 51, 51, 1);
+	padding: 9px 0;
+}
+
+.sr_input_300 {
+	width: 300px;
+	border: 1px solid rgba(238, 238, 238, 1);
+	border-radius: 4px;
+}
+
+.sr_margin-bottom30 {
+	margin-bottom: 30px;
+}
+
+.save_and_modify {
+	color: rgba(255, 255, 255, 1);
+	background: rgba(97, 108, 255, 1);
+}
+
+.sr_waiver {
+	background: rgba(238, 238, 238, 1);
+	color: rgba(153, 153, 153, 1);
+}
+
+.save_btn {
+	padding: 0 137px;
+	height: 38px;
+	line-height: 38px;
+	border-radius: 4px;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.sr_margin_top10 {
+	margin-top: 10px;
+}
+
+.sr_border_eee {
+	border-radius: 4px;
+	border-color: #EEEEEE;
+	border-width: 0px;
+}
+
+.sr_border_eee input {
+	border-radius: 4px;
+	border-color: #EEEEEE;
+}
+
+.sr_select_nv .layui-form-select dl dd.layui-this {
+	background-color: #616cff;
+}
+
+.sr_select_nv input {
+	border-color: #EEEEEE;
+}
+
+.sr_form_person .sr_margin-bottom30 .sr_width_110 {
+	width: 110px;
+}
+
+.sr_width_110 .layui-form-select dl dd.layui-this {
+	background-color: #616cff;
+}
+
+.sr_margin-right0 {
+	margin-right: 0!important;
+}
+
+.sr_margin-bottom30 .sr_margin-right_36 {
+	margin-right: 36px;
+}
+
+.sr_width_60 {
+	width: 70px;
+}
+
+.sr_width_250 {
+	width: 256px;
+}
+
+.sr_margin_left_64 {
+	margin-left: 84px;
+}
+
+.tip_name,
+.tip_gender,
+.tip_prev,
+.tip_gender_con,
+.tip_name_con,
+.tip_sure_change_pad,
+.tip_change_pad_old,
+.tip_change_pad_new {
+	margin-top: 7px;
+	margin-bottom: 7px;
+	height: 16px;
+	font-size: 12px;
+	color: #E73637;
+}
+
+ /*取消、显示、验证码*/
+.input_part{position: relative;}
+.input_cancel1,.pwd_see,.input_cancel2{position: absolute;top: 12px;right: 20px;cursor: pointer;display: none;}
+.pwd_see{top: 10px;display: block;}
+.input_cancel2{right: 58px;}
+.yzm_img{position: absolute;right: 1px;bottom: 1px;width: 100px;height: 48px;}
+ input::-webkit-input-placeholder {
+ 	color: rgba(204, 204, 204, 1);
+ }
+ 
+ input::-moz-placeholder {
+ 	/* Mozilla Firefox 19+ */
+ 	color: rgba(204, 204, 204, 1);
+ }
+ 
+ input:-moz-placeholder {
+ 	/* Mozilla Firefox 4 to 18 */
+ 	color: rgba(204, 204, 204, 1);
+ }
+ 
+ input:-ms-input-placeholder {
+ 	/* Internet Explorer 10-11 */
+ 	color: rgba(204, 204, 204, 1);
+ }
+ 
+ .bind_tit {
+ 	margin: 0;
+ 	/*margin-top: 1px;*/
+ 	font-size: 28px;
+ 	font-weight: 400;
+ 	color: rgba(97, 108, 255, 1);
+ }
+ 
+ .sr_bind_email {
+ 	width: 300px;
+ 	margin: 40px auto 20px;
+ }
+ /*.sr_bind_email .layui-form-item {
+ 	margin-bottom: 40px;
+ }*/
+ 
+ .sr_bind_email input {
+ 	padding-left: 20px;
+ 	border: 1px solid rgba(238, 238, 238, 1);
+ 	border-radius: 3px;
+ }
+ 
+ .sr_enter_code {
+ 	display: flex;
+ }
+ 
+ .sr_enter_code input {
+ 	width: 166px;
+ 	margin-right: 10px;
+ }
+ 
+ .sr_enter_code button {
+ 	width: 124px;
+ 	font-size: 14px;
+ 	font-weight: 400;
+ 	color: rgba(255, 255, 255, 1);
+ 	background: rgba(97, 108, 255, 1);
+ 	border-radius: 3px;
+ }
+ 
+ .sr_bind_email .sr_bind_btn,
+ .sr_bind_email .sr_sub_btn,.sr_change_btn{
+ 	width: 300px;
+ 	font-size: 16px;
+ 	background: rgba(238, 238, 238, 1);
+ 	border-radius: 3px;
+ 	font-weight: 500;
+ 	color: rgba(153, 153, 153, 1);
+ }
+ 
+ .sr_bind_email .sr_bind_btn:hover,
+ .sr_bind_email .sr_sub_btn:hover,.sr_change_btn:hover {
+ 	background-color: rgba(97, 108, 255, 1);
+ 	color: #ffffff;
+ }
+ 
+ .tip_phone,
+ .tip_code,
+ .tip_phone_original,
+ .tip_phone_now,
+ .tip_code_now,
+ .tip_login_number,
+ .tip_login_pad,
+ .tip_code_pad,
+ .tip_old_number,
+ .tip_new_number,
+ .tip_code_number,
+ .tip_person_name,.tip_company_name {
+ 	margin-top: 8px;
+ 	margin-bottom: 16px;
+ 	height: 16px;
+ 	font-size: 12px;
+ 	color: #E73637;
+ 	text-align: left;
+ }
+ .tip_person_name,.tip_company_name{
+ 	text-align: center;
+ }
+ .sr_form_person .layui-form-item{
+ 	margin-bottom: 16px;
+ }
+ /* 我的账户-切换账户 */
+#switchingAccounts{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.switching_accounts{
+    padding:40px 80px;
+}
+.switch_account_button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+.switch_account_button button{
+    width: 260px;
+}
+.switch_account_button .layui-btn{
+    margin-left: 0;
+}
+.switch_account_button .layui-btn:first-child{
+    color:#ffffff;
+    background:#616CFF ;
+}
+.switch_account_button .layui-btn:first-child a{
+    color:#ffffff;
+    display: block;
+}
+.switch_account_button .layui-btn:last-child{
+    margin-top: 20px;
+}
+.switching_wrap_left .switching_service_tip{
+    font-size:16px;
+    font-weight:500;
+    color:#999999;
+    margin: 20px auto 50px;
+}
+.switching_wrap_right{
+    width: 328px;
+    height: 230px;
+    overflow: hidden;
+}
+.switching_wrap_right img{
+    width: 100%;
+    height: 100%;
+}
+.layui-btn.gray_btn{
+    background: #EEEEEE;
+    border:0!important;
+}
+.layui-btn.gray_btn_120{
+	width: 120px;
+	height: 32px;
+	line-height: 32px;
+}
+.layui-btn.gray_btn{
+	color:#999999;
+}
+.switching_wrap_left .layui-btn{
+    height: 44px;
+    line-height: 44px;
+    padding:0 35px;
+}
+.sr_switch_user{
+    font-size:28px;
+font-weight:500;
+color:rgba(97,108,255,1);
+}

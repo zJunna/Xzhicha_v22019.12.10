@@ -1,0 +1,143 @@
+<!-- 用户中心-个人实名认证-头部 -->
+<!-- <div class="layui-container"> -->
+<script src="../../../public/webBase/js/base.js" type="text/javascript" charset="utf-8"></script>
+<div class="layui-row">
+	<div class="sr_user_container">
+		<div class="user_header">
+			<div class="userHeader_left">
+				<img src="../../../public/webBase/images/user/login_logo.png" alt="">
+				<span class="userHeader_tip">职场信息共享平台</span>
+			</div>
+			<ul class="userHeader_mid">
+				<li class="userHeader_li">
+					<a href="../BaseAction/index.html">首页</a>
+				</li>
+				<li class="userHeader_li">
+					<a href="">查个人</a>
+				</li>
+				<li class="userHeader_li">
+					<a href="">查企业</a>
+				</li>
+				<li class="userHeader_li">
+					<a href="">线上人力</a>
+				</li>
+				<li class="userHeader_li">
+					<a href="">关于我们</a>
+				</li>
+				<li class="userHeader_li userHeaderOn">
+					<a href="../source/user/userCenter.html">用户中心</a>
+				</li>
+			</ul>
+			<div class="head_portrait">
+				<a href="../source/user/userCenter.html">
+					<img class="head_portrait_img" src="https://dco-assets.everestads.net/iCornerStore/source-images/MICROSOFTSTORE/current/79afc079d8d543f1e5426536c0511cd3.png" alt="">
+				</a>
+				<div class="logo_hover_land">
+						<div class="each_land each_land1">
+							<img src="../../../public/webBase/images/public/switch.png" />
+							<p id="sr_switch_account">账户切换</p>
+						</div>
+					<a href="#">
+						<div class="each_land each_land2">
+
+							<img src="../../../public/webBase/images/public/p_c.png" />
+							<p>实名认证</p>
+
+						</div>
+					</a>
+					<div class="each_land each_land3">
+						<img src="../../../public/webBase/images/public/sign_out.png" />
+						<p>退出登录</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="">
+				<!--登录后鼠标滑过头像-->
+
+			</div>
+
+		</div>
+
+	</div>
+</div>
+<!--线上人力的弹窗-->
+<div class="online_pop">
+	<div class="online_pop_box">
+		<p>个人不支持此功能！</p>
+		<a href="#">
+			<div class="online_pop_button">
+				确定
+			</div>
+		</a>
+	</div>
+</div>
+<!-- 
+    </div> -->
+<script type="text/javascript">
+	//鼠标滑过登录后的头像
+	$(".head_portrait").hover(function() {
+		$(".logo_hover_land").css("display", "block");
+	}, function() {
+		$(".logo_hover_land").css("display", "none");
+	})
+	$(".each_land1").hover(function() {
+		$(this).find("img").attr("src", "../../../public/webBase/images/public/switch_hover.png");
+		$(this).css("background", "#616CFF");
+		$(this).find("p").css("color","#fff")
+	}, function() {
+		$(this).find("img").attr("src", "../../../public/webBase/images/public/switch.png");
+		$(this).css("background", "#FFFFFF");
+		$(this).find("p").css("color","rgba(51, 51, 51, 1)")
+		
+	})
+	$(".each_land2").hover(function() {
+		$(this).find("img").attr("src", "../../../public/webBase/images/public/p_c_hover.png");
+		$(this).css("background", "#616CFF");
+		$(this).find("p").css("color","#fff")
+	}, function() {
+		$(this).find("img").attr("src", "../../../public/webBase/images/public/p_c.png");
+		$(this).css("background", "#FFFFFF");
+		$(this).find("p").css("color","rgba(51, 51, 51, 1)")
+	})
+	$(".each_land3").hover(function() {
+		$(this).find("img").attr("src", "../../../public/webBase/images/public/sign_out_hover.png");
+		$(this).css("background", "#616CFF");
+		$(this).find("p").css("color","#fff")
+	}, function() {
+		$(this).find("img").attr("src", "../../../public/webBase/images/public/sign_out.png");
+		$(this).css("background", "#FFFFFF");
+		$(this).find("p").css("color","rgba(51, 51, 51, 1)")
+	})
+	//退出登录,并返回首页
+	$(".each_land3").click(function() {
+		localStorage.clear();
+		location.href = "../BaseAction/index.html"
+	})
+</script>
+<script type="text/javascript">
+	//判断点击导航上的线上人力时是否登录   
+
+	$(".userHeader_mid li:nth-child(4)").click(function() {
+		if(user_id == '') {
+			href_login();
+		}else{
+			if(identity_status == 0) { //个人用户
+				$('.online_pop').css('display', 'flex');
+				$('.online_pop_box').css('display','block')
+				return false;
+			}else{  //企业用户
+				if(authentication_status != 2 || authentication_status != 7) {
+					location.href = '../BaseAction/index.html';
+				}
+			}
+		}
+	})
+	$('.online_pop').click(function(){
+		$('.online_pop,.online_pop_box').hide()
+	})
+	//线上人力弹窗
+	$(".online_pop_button").click(function() {
+		$('.online_pop').css('display', 'none');
+	})
+</script>

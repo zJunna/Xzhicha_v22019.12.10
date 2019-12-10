@@ -1,0 +1,141 @@
+/*侧边栏变色*/
+.account_switching .account_li:nth-child(3) a{background-color: #616CFF;color: #ffffff;}
+/*企业 - 简历*/
+.co_resume{width: 860px;font-size:14px;margin: 0;}
+.account_right{margin-left: 40px;}
+/*选项卡*/
+.layui-tab-title{background: #fff;height: 60px;border-radius:4px;}
+.layui-tab-title li{margin-left: 40px;font-size: 16px;color: #999;}
+.layui-tab-brief>.layui-tab-title .layui-this{color: #616CFF;font-weight:500;}
+.layui-tab-title .layui-badge, .layui-tab-title .layui-badge-dot{left: 4px;top: -6px;}
+.resume_badge{background: #e4393b;}
+/*选项卡1,2,3*/
+.resume_tab{background: #F2F3F4;padding: 10px 0 0;}
+.resume_tab .layui-tab-item{background: #fff;border-radius:4px;padding: 20px 40px 30px;}
+.resume_tab .layui-tab-item:nth-child(1){padding-top: 30px;}
+.resume_tab .layui-tab-item:nth-child(2){}
+.resume_tab .layui-tab-item:nth-child(3){}
+/*职位管理*/
+.pos_management{}
+.pos_management_top{}
+.pos_already{padding-top: 10px;color: #666;}
+.release_pos{width:120px;height:30px;text-align: center;line-height:30px;background: #616CFF;border-radius:3px;font-size:12px;font-weight:500;color: #fff;border: 1px solid #616CFF;cursor: pointer;}
+.release_pos:hover{background: #7881ff;border-color: #7881ff;}
+.pos_management_list{margin-top: 10px;}
+.pos_management_list ul li{padding: 20px;border-radius:4px;}
+.pos_management_list ul li:hover{background: rgba(97,108,255,0.1);cursor: pointer;}
+.pos_management_list ul li .pos_pos1{font-size:16px;}
+.pos_management_list ul li .pos_salary1{font-size:16px;color: #616CFF;margin-left: 10px;}
+.pos_management_list ul li .pos_under1{margin-top: 10px;}
+.pos_management_list ul li .pos_under1 span{font-size:14px;color: #666;}
+.pos_management_list ul li .pos_shu1{color: #CCC !important;margin: 0 20px;}
+.pos_time{line-height: 50px;color: #999;}
+/*开关*/
+.pos_operate{line-height: 50px;display: none;}
+.layui-form-switch{width:44px;height:18px;margin-top: 0;background: #999;border: 1px solid #999;}
+.layui-form-onswitch{border-color: #616CFF;background-color: #616CFF;}
+.layui-form-switch i{left: 1px;top: 1px;width: 14px;height: 14px;background: #fff;}
+.layui-form-onswitch i{margin-left: 26px;}
+.switch_text1{margin-left: 10px;color: #999;display: inline-block;width: 56px;}
+.switch_color{color: #616CFF;}
+.pos_del1{margin-left: 30px;color: #616CFF;}
+.pos_edit1{margin-left: 20px;color: #616CFF;}
+.pos_del1:hover,.pos_edit1:hover{text-decoration: underline;}
+.pos_del1 img,.pos_edit1 img{margin-right: 5px;}
+/*发布、编辑职位*/
+.pos_release{display: none;}
+.pos_release_top{font-size:16px;color: #666;margin-bottom: 20px;}
+.layui-inline{margin-bottom: 16px;display: block;}
+.layui-form-label{float: none;padding: 0;text-align: left;font-size:14px;color: #666;margin-bottom: 10px;}
+.layui-input, .layui-textarea{width: 360px;}
+.layui-input, .layui-select, .layui-textarea{border-radius:4px;}
+.posi_btn1{margin-top: 40px;margin-bottom: 22px;}
+.publish_job,.cancel_edit{width:160px;height:40px;background: #616CFF;border-radius:4px;}
+.cancel_edit{background: #EEE;color: #999;margin-left: 40px;}
+.cancel_edit:hover{opacity: 1;color: #999;}
+/*三级联动*/
+.el-input__inner{border: 1px solid #e6e6e6 !important;width: 360px !important;}
+.el-cascader .el-input .el-input__inner:focus, .el-cascader .el-input.is-focus .el-input__inner{border-color: #e6e6e6 !important;}
+.el-cascader-node.in-active-path, .el-cascader-node.is-active, .el-cascader-node.is-selectable.in-checked-path{color: #616CFF !important;}
+/*下拉框*/
+.layui-input, .layui-textarea{padding-left: 20px;}
+.select_2 .layui-input, .layui-textarea{width: 160px;}
+.layui-form-select dl dd.layui-this{background-color: #616CFF;}
+.select_province{margin-right: 40px;}
+/*提示*/
+.pos_tip1,.pos_tip2,.pos_tip3,.pos_tip4,.pos_tip5,.pos_tip6{margin-left: 20px;line-height: 40px;color: #E73637;font-size: 12px;display: none;}
+/*分页*/
+.pos_management_page{}
+
+
+
+/*简历推荐、查看过的简历*/
+.tj_resume ul li,.see_resume ul li{padding: 20px;background: #fff;border-radius:4px;}
+.tj_resume ul li:hover,.see_resume ul li:hover{cursor: pointer;background:rgba(97,108,255,0.1);}
+.res_surname{margin-right: 16px;width:42px;height: 42px;text-align: center;line-height: 42px;border-radius: 50%;background: #616CFF;color: #fff;font-size:18px;}
+.res_pos_name{color: #333;font-size:16px;margin-bottom: 2px;height: 21px;}
+.res_pos_details{color: #666;}
+.pos_shu2{color: #CCC !important;margin: 0 20px;}
+.res_salary{line-height: 42px;color: #616CFF;font-size:16px;font-size:16px;}
+
+
+/*简历推荐、查看过的简历*/
+
+.kk_page3 .pagination,.kk_page2 .pagination{
+    display: inline;
+    padding: 6px 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: 1px solid #dfdfdf;
+    background-color: #fff;
+    color: #dfdfdf;
+    cursor: pointer;
+}
+.kk_page3 .pagination:hover,.kk_page2 .pagination:hover{
+	background-color: #616CFF;
+	color: #fff;
+}
+.kk_page3 .kk3_page .kk3_page_no,.kk_page2 .kk2_page .kk2_page_no {
+    border: 1px solid #ccc;
+    display: inline;
+    padding: 6px 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    cursor: pointer;
+    background: #fff;
+    text-decoration: none;
+    color: #999;
+}
+.kk_page3 .kk3_page .kk3_page_no:hover,.kk_page2 .kk2_page .kk2_page_no:hover{
+	border: 1px solid #616CFF;
+    display: inline;
+    padding: 6px 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background: #616CFF;
+    color: #fff;
+}
+.kk_page3 .kk3_page .on,.kk_page2 .kk2_page .on{
+	border: 1px solid #616CFF;
+    display: inline;
+    padding: 6px 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background: #616CFF;
+    color: #fff;
+}
+/*个人 - 简历*/
+.per_resume{width: 860px;font-size:14px;}
+.per_no_data{color:#666666;}
+
+
+
+

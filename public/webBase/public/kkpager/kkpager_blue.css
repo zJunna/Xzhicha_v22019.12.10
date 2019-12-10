@@ -1,0 +1,123 @@
+#kkpager {
+	clear: both;
+	color: #999;
+	padding: 5px 0;
+	font-size: 13px;
+	margin-top: 30px;
+}
+
+#kkpager a {
+	float: left;
+	border: 1px solid #ccc;
+	display: inline;
+	padding: 6px 10px;
+	margin-right: 5px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	cursor: pointer;
+	background: #fff;
+	text-decoration: none;
+	color: #999
+}
+
+#kkpager span.disabled {
+	float: left;
+	display: inline;
+padding: 6px 10px;
+	margin-right: 5px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border: 1px solid #dfdfdf;
+	background-color: #fff;
+	color: #dfdfdf;
+}
+
+#kkpager span.curr {
+	float: left;
+	border: 1px solid #616CFF;
+	display: inline;
+padding: 6px 10px;
+	margin-right: 5px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	background: #616CFF;
+	color: #fff;
+}
+
+#kkpager a:hover {
+	border: 1px solid #616CFF;
+	background-color: #616CFF;
+	color: #fff
+}
+
+#kkpager span.normalsize {}
+
+#kkpager_gopage_wrap {
+	position: relative;
+	left: 0;
+	top: 0
+}
+
+#kkpager_btn_go {
+	width: 44px;
+	height:28px;
+	border: 0;
+	overflow: hidden;
+	line-height: 140%;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	cursor: pointer;
+	background-color: #616CFF;
+	color: #fff;
+	position: absolute;
+	left: 61px;
+	/*top: 0px;*/
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	display: none
+}
+
+#kkpager_btn_go_input {
+	width: 38px;
+	height: 28px;
+	color: #999;
+	text-align: center;
+	margin-left: 1px;
+	margin-right: 1px;
+	border: 1px solid #dfdfdf;
+	position: relative;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	left: 0;
+	top: 0;
+	outline: none
+}
+
+#kkpager_btn_go_input.focus {
+	border-color: #616CFF
+}
+
+#kkpager .pageBtnWrap {
+	float: left
+}
+
+#kkpager .infoTextAndGoPageBtnWrap {
+	float: right;
+}
+
+#kkpager .spanDot {
+	float: left;
+	margin-right: 5px
+}
+
+#kkpager .currPageNum {
+	color: #fd7f4d
+}
+
+#kkpager .infoTextAndGoPageBtnWrap {
+	padding-top: 5px
+}

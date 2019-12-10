@@ -1,0 +1,121 @@
+<!--信用评估-->
+<link rel="stylesheet" href="../../../public/webBase/css/user/myAccount/myAccount.css">
+<script src="../../../public/webBase/public/echarts.min.js"></script>
+<script src="../../../public/webBase/js/user/myAccount/creditEvaluation.js" type="text/javascript" charset="utf-8"></script>
+		
+<div class="credit_evaluation cf">
+	<!--信用评估左边部分-->
+	<div class="credit_evaluation_left_bg fl">
+		<div class="credit_evaluation_left">
+			<h4 class="credit_title">本月信用值</h4>
+			<!--圆环图-->
+			<div class="credit_cirle">
+				<div id="chart4" style="width: 94px;height: 94px;"></div>
+			</div>
+			<div class="credit_score">上月信用<span class="last_credit"></span></div>
+			<button type="button" class="layui-btn width_110" id="sr_start" data-type="loading">开始评估</button>
+			<div class="sr_credit_three">
+				<dl class="credit_summary">
+					<dd class="credit_number">6</dd>
+					<dd class="credit_three_title">评估项</dd>
+				</dl>
+				<dl class="credit_summary">
+					<dd class="credit_number" id='sr_total_assessment'>0</dd>
+					<dd class="credit_three_title">安全项</dd>
+				</dl>
+				<dl class="credit_summary">
+					<dd class="credit_number" id='sr_danger'>0</dd>
+					<dd class="credit_three_title">危险项</dd>
+				</dl>
+			</div>
+			<!--进度条-->
+			<ul class="credit_progress_bar">
+				<li class="credit_progress_li">
+					<div class="credit_progress_li_title">
+						<span class="progress_title">失信人</span>
+						<div class="layui-progress" lay-showpercent="true" lay-filter='bar'>
+							<input type="hidden" name="sr_bar_val" id="sr_bar_val1" value="" />
+						  <div class="layui-progress-bar" id="bar1" lay-percent="0%" style="width: 0%;">
+						  	<span class="layui-progress-text">0%</span>
+						  </div>
+						</div>
+					</div>
+				</li>
+				<li class="credit_progress_li">
+					<div class="credit_progress_li_title">
+							<span class="progress_title">涉诉信息</span>
+						<div class="layui-progress" lay-showpercent="true" lay-filter='bar'>
+							<input type="hidden" name="sr_bar_val" id="sr_bar_val2" value="" />
+						  <div class="layui-progress-bar" id="bar2" lay-percent="0%" style="width: 0%;">
+						  	<span class="layui-progress-text">0%</span>
+						  </div>
+						</div>
+					</div>
+				</li>
+				<li class="credit_progress_li">
+					<div class="credit_progress_li_title">
+							<span class="progress_title">银行逾期</span>
+							<input type="hidden" name="sr_bar_val" id="sr_bar_val3" value="" />
+						<div class="layui-progress" lay-showpercent="true" lay-filter='bar'>
+						  <div class="layui-progress-bar" id='bar3' lay-percent="0%" style="width: 0%;">
+						  	<span class="layui-progress-text">0%</span>
+						  </div>
+						</div>
+					</div>
+				</li>
+				<li class="credit_progress_li">
+					<div class="credit_progress_li_title">
+							<span class="progress_title">不良记录</span>
+						<div class="layui-progress" lay-showpercent="true" lay-filter='bar'>
+							<input type="hidden" name="sr_bar_val" id="sr_bar_val4" value="" />
+						  <div class="layui-progress-bar" id="bar4" lay-percent="0%" style="width: 0%;">
+						  	<span class="layui-progress-text">0%</span>
+						  </div>
+						</div>
+					</div>
+				</li>
+				<li class="credit_progress_li">
+					<div class="credit_progress_li_title">
+							<span class="progress_title">被执行人</span>
+						<div class="layui-progress" lay-showpercent="true" lay-filter='bar'>
+							<input type="hidden" name="sr_bar_val" id="sr_bar_val5" value="" />
+							<div class="layui-progress-bar" id='bar5' lay-percent="0%" style="width: 0%;">
+								<span class="layui-progress-text">0%</span>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="credit_progress_li">
+					<div class="credit_progress_li_title">
+							<span class="progress_title">网贷黑名单</span>
+						<div class="layui-progress" lay-showpercent="true" lay-filter='bar'>
+							<input type="hidden" name="sr_bar_val" id="sr_bar_val6" value="" />
+						  <div class="layui-progress-bar" id='bar6' lay-percent="0%" style="width: 0%;">
+						  	<span class="layui-progress-text">0%</span>
+						  </div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--信用评估右边部分-->
+	<div class="credit_evaluation_right fl">
+		<div class="credit_trend_bg">
+			<h3 class="credit_trend_title">信用走势图</h3>
+			<div class="credit_trend_broken_line">
+				<div id="broken_line"></div>
+			</div>
+		</div>
+		<div class="credit_radar_bg">
+			<h3 class="credit_trend_title">历史信用解析</h3>
+			<div class="credit_trend_broken_line">
+				<div id="sr_radar" style="width: 500px;height: 250px;"></div>
+			</div>
+			<div class="tip_Asterisk">
+				<span class="Asterisk">*</span>
+				<span class="tip_write">数据仅供您参考</span>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,579 @@
+/*个人简历*/
+.per_myResume .layui-this{
+	color:#616CFF;
+	border-bottom:2px solid #616CFF;
+}
+.per_myResume li{
+	border-bottom:2px solid #ffffff;
+	line-height: 58px;
+}
+.per_vitae .layui-tab-content{
+	padding: 0;
+	margin-top: 10px;
+}
+.per_vitae .per_top{
+	border-bottom: 1px solid rgba(242,243,244,1);
+}
+.per_preview a{
+	color:#666666;
+}
+.padding_left_right_40{
+	padding: 0 40px;
+}
+.per_data_and_preview{
+	font-size:14px;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+	padding-top: 20px;
+}
+.per_head_portrait{
+	margin-top: 6px;
+	text-align: center;
+}
+.per_head_portrait .per_photo{
+	overflow: hidden;
+	text-align: center;
+}
+.per_head_portrait .per_photo img{
+	width: 112px;
+	height: 112px;
+	border-radius: 50%;
+	overflow: hidden;}
+.per_head_portrait .per_name{
+	font-size:28px;
+	font-weight:400;
+	color:rgba(51,51,51,1);
+}
+.per_name_Gender{
+	margin: 20px auto 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.per_name_Gender img{
+	width: 24px;
+	height: 24px;
+	margin-left: 10px;
+}
+/*基本信息*/
+.per_essential_information{
+	padding-top: 30px;
+	border-bottom: 1px solid #F2F3F4;
+}
+.per_essential_information:last-child{
+	border:0;
+}
+.per_information_h5{
+	font-size:20px;
+	font-weight:500;
+	color:rgba(102,102,102,1);
+	padding-left: 20px;
+}
+.Vertical_line{
+	position: absolute;
+	width: 4px;
+    height: 20px;
+    background: #616cff;
+    display: block;
+}
+.per_edit{
+	margin-right: 20px;
+	font-size:14px;
+	font-weight:400;
+	color:rgba(97,108,255,1);
+	cursor: pointer;
+}
+.per_edit:hover{
+	color:rgba(97,108,255,1);
+}
+.per_edit img{
+	margin-right: 5px;
+}
+.per_year_ul{
+	margin: 20px 0;
+}
+.per_year_li{
+	font-size:14px;
+	font-weight:400;
+	color:rgba(102,102,102,1);
+	padding:0 20px;
+	position: relative;
+}
+.per_year_li:after{
+	width: 1px;
+	height: 10px;
+	content: '';
+	background: #cccccc;
+	position: absolute;
+	left: 0;
+	top: 5px;
+}
+.per_year_li:first-child:after{
+	width: 0;
+	height: 0;
+}
+.per_iphone_and_email{
+	margin-bottom: 30px;
+}
+.per_essential_information .per_iphone,.per_essential_information .per_iemail{
+	font-size:14px;
+	font-weight:400;
+	color:rgba(102,102,102,1);
+}
+.per_iphone span,.per_iemail span{
+	margin-left: 10px;
+}
+.per_essential_information .per_iphone{
+	margin-left: 20px;
+}
+.per_essential_information .per_iemail{
+	margin-left: 30px;
+}
+.per_information_form{
+	margin-top: 20px;
+}
+.per_information_form .layui-form-item{
+	width: 50%;
+}
+.per_information_form .layui-form{
+	display: flex;
+	flex-wrap: wrap;
+}
+.per_Unfolding_information{
+	background:rgba(97,108,255,.05);
+	display: none;
+}
+.per_Unfolding_information h5{
+	padding-top: 30px;
+}
+.per_Unfolding_information .layui-input-block{
+	margin-left: 0;
+}
+.per_information_form .layui-form-select .layui-edge{
+	right: 50px;
+}
+.per_information_form .layui-form-select dl{
+	min-width:92%
+}
+.per_information_form .layui-form-label{
+	width:90px;
+}
+.per_information_btn{
+	margin: 30px 0;
+}
+.per_information_btn button{
+	width: 160px;
+}
+.per_information_btn .per_save{
+	background:rgba(97,108,255,1);
+	border-radius:4px;
+	font-size:14px;
+	font-weight:500;
+	color:rgba(255,255,255,1);
+}
+.per_information_btn  .per_give_up{
+	background:rgba(255,255,255,1);
+	border:1px solid rgba(238,238,238,1);
+	border-radius:4px;
+	font-size:14px;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+	margin-left: 40px;
+}
+.per_Unfolding_information .layui-input:focus,.per_Unfolding_information .layui-textarea:focus{border-color:#dddddd!important}
+.per_information_form .layui-form-radio>i:hover,.per_information_form .layui-form-radioed>i{
+	color:#616CFF;
+}
+.layui-laydate .layui-this {background-color: #616cff!important;}
+.per_information_form .layui-form-radio>i:hover,.per_information_form .layui-form-radioed>i{
+	color:#616CFF;
+}
+.Add_work_experience .layui-form-label{
+	width: 150px;
+}
+/*求职意向*/
+.per_job_content_no{
+	margin: 20px 0 30px;
+	font-size:14px;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+	padding-left: 20px;
+}
+.per_job_content .per_job_option{
+	padding: 15px 20px;
+	border-radius:4px;
+}
+.Work_Jingl .per_job_option,.Educational_background .per_job_option,.Job_intention .per_job_option{
+	margin-top: 15px;
+}
+.per_job_content .per_job_option:hover{
+	background:rgba(97,108,255,.1);
+}
+.per_job_exhibition li{
+	font-size:14px;
+	font-weight:400;
+	color:rgba(102,102,102,1);
+	padding: 0 20px;
+	position: relative;
+}
+.per_job_exhibition li:first-child{
+	padding-left: 0;
+}
+.per_job_exhibition li:after{
+	content:'';
+	width:1px;
+	height: 10px;
+	position: absolute;
+	background: #ccc;
+	top: 5px;
+	right: 0;
+}
+.per_job_exhibition li:last-child:after,.per_job_exhibition li:nth-child(3):after{
+	background: #fff;
+	width: 0;
+	height: 0;
+	content:'';
+}
+.per_job_button .per_job_edit{
+	font-size:14px;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+}
+.per_job_edit_hover{
+	display: none;
+}
+.per_job_content{
+	margin-bottom: 30px;
+}
+.per_work_h5 h5{
+	font-size:16px;
+	font-weight:500;
+	color:rgba(51,51,51,1);
+}
+.per_work_h5 span{
+	margin-left: 20px;
+	font-size:14px;
+	font-weight:400;
+	color:rgba(153,153,153,1);
+}
+.per_work_li_title{
+	margin-bottom: 20px;
+}
+.per_job_content_detail{
+	margin-top: 20px;
+}
+.per_job_content_detail li{
+	font-size:14px;
+	font-weight:400;
+	color:rgba(102,102,102,1);
+	line-height:21px;
+	word-wrap: break-word;
+}
+.per_work_experience{
+	padding: 15px 20px;
+	border-radius: 4px;
+}
+.per_work_experience:hover{
+	background:rgba(97,108,255,.1);
+}
+.per_margin-bot15{
+	padding-bottom: 15px;
+}
+.per_self_evaluation{
+	display: none;
+	background:rgba(97,108,255,.05);
+}
+.sr_border_bottom0{
+	border:0;
+}
+.sr_margin_top2010{
+	margin: 20px 0 10px;
+	font-size:14px;
+	font-weight:400;
+	color:rgba(102,102,102,1);
+}
+.per_self_evaluation .layui-textarea{
+	width: 780px;
+}
+.per_self_evaluation .layui-input-block{
+	margin-left: 0;
+}
+.per_job_edit a{
+	margin-right: 0;
+}
+.word_limit{
+	text-align: right;
+	font-size:12px;
+	font-weight:400;
+	color:#999999;
+	line-height:21px;
+	margin-top: 14px;
+}
+#input_size{
+	color:#E4393B;
+}
+.per_self_evaluation .per_information_btn{
+	margin: 22px 0 0;
+}
+.padding_left0{
+	padding-left: 0;
+}
+/*求职意向*/
+
+.layui-input:hover,
+.layui-textarea:hover {
+	border-color: #616CFF!important;
+}
+
+.car_intention_objective {
+	padding: 0 40px;
+	background: rgba(97, 108, 255, .05);
+}
+
+.pd30 {
+	padding-left: 30px;
+}
+
+.car_intention_objective h5 {
+	font-size: 20px;
+	font-weight: 500;
+	color: rgba(102, 102, 102, 1);
+	padding-top: 30px;
+}
+
+.car_intention_objective_form .layui-form {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.car_title {
+	margin-top: 20px;
+	width: 50%;
+}
+
+.car_title .layui-form-label {
+	font-size: 14px;
+	font-weight: 400;
+	color: rgba(102, 102, 102, 1);
+}
+
+.car_title .layui-input-block {
+	margin-left: 0;
+}
+
+.car_title .layui-input-inline {
+	width: 360px;
+}
+
+.car_title .layui-edge {
+	right: 20px;
+}
+
+.select_input .layui-input-inline {
+	width: 180px;
+	margin-right: 0px;
+	padding-right: 15px;
+}
+
+.select_input .layui-input-inline .layui-input {
+	width: 164px;
+}
+.car_title .limit_input {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+}
+.car_intention_objective_btn {
+	margin: 20px 0 47px 0;
+}
+.car_intention_objective_btn .car_intention {
+	width: 160px;
+	height: 40px;
+	border-radius: 4px;
+}
+.car_intention_objective_btn .car_add {
+	background: rgba(97, 108, 255, 1);
+	font-size: 14px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 1);
+	text-align: center;
+	line-height: 40px;
+}
+.car_intention_objective_btn .car_cancel {
+	background: rgba(255, 255, 255, 1);
+	border: 1px solid rgba(238, 238, 238, 1);
+	font-size: 14px;
+	font-weight: 400;
+	color: rgba(153, 153, 153, 1);
+	text-align: center;
+	line-height: 40px;
+	margin-left: 40px;
+}
+.car_text {
+	margin-top: 20px;
+	width: 100%;
+}
+.car_text .layui-form-label {
+	font-size: 14px;
+	font-weight: 400;
+	color: rgba(102, 102, 102, 1);
+}
+.car_text .layui-input-block {
+	margin-left: 0;
+}
+.car_text .layui-textarea {
+	width: 100%;
+}
+/*求职意向*/
+
+.select_input_time .layui-input-inline {
+	width: 175px;
+}
+.car_textarea .layui-textarea {
+	min-height: 126px;
+	padding: 20px;
+}
+.layui-input-block {
+	position: relative;
+}
+.word {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	color: #aaa;
+	font-size: 12px;
+}
+.Add_job_intention,.Add_work_experience,.Add_educational_background{
+	display: none;
+}
+.per_padding{
+	padding-bottom:60px;
+}
+#title_information:hover,#date1:hover{
+	border:1px solid #e6e6e6!important;
+}
+.per_information_form .sr_per_right_20 .layui-edge{
+	right: 20px;
+}
+#per_phone,#per_email{
+	position: relative;
+}
+.tip_phone_per{
+	position: absolute;
+	right: 45px;
+	top: 10px;
+	color:rgba(97,108,255,1);
+}
+.tip_email_per{
+	left: 305px;
+	right: 0;
+	display: block;
+    width: 60px;
+}
+.tip_look_position,.tip_Job_category,.tip_province_add,.tip_city_add{
+	font-size:12px;
+	font-weight:400;
+	color:rgba(228,57,59,1);
+	margin: 6px 0 10px;
+	display: none;
+}
+.car_intention_objective_form .layui-form-item{
+	margin-bottom: 10px;
+}
+.car_title{
+	margin-top: 10px;
+}
+.el-cascader:not(.is-disabled):hover .el-input__inner{
+	border-color:#616CFF!important;
+}
+/*添加背景教育输入框为空的提示add_error*/
+.add_error{
+font-size:12px;
+font-weight:400;
+color:rgba(228,57,59,1);
+display: none; 
+}
+.pos_edit1,.per_job_edit_delete,.pos_del1{
+	cursor: pointer;
+}
+/*遮罩*/
+.preview_resume_bg{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999999999;
+	background-color: rgba(0, 0, 0, 0.3);
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: none;
+}
+
+.sr_preview_overflow{
+	position: relative;
+	width: 910px;
+	z-index: 1000000000;
+	height: 100%;
+	display: none;
+}
+
+.preview_resume_box {
+	width: 860px;
+	background-color: #fff;
+	padding-top: 40px;
+	max-height: 100%;
+	overflow-y: auto;
+}
+.preview_resume_box .per_job_content .per_job_option:hover,.preview_resume_box .per_work_experience:hover{
+	background: #FFFFFF;
+}
+/*遮罩层*/
+.preview_close_and_download{
+	position: absolute;
+	top: 0;
+	right: 0px;
+}
+.preview_close,.preview_download{
+	width:50px;
+	height:50px;
+	background:rgba(238,238,238,1);
+	border-radius:3px;	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	cursor: pointer;
+}
+.preview_close img,.preview_download img{
+	width: 24px;
+	height: 24px;
+}
+.preview_download{
+	margin-top: 10px;
+}
+.close_white{
+	font-size:14px;
+	font-weight:400;
+	color:rgba(255,255,255,1);
+	line-height:21px;
+	display: none;
+}
+#preview_resume_a{
+	cursor: pointer;
+}
+.per_essential_information .sr_margin_top0{
+	margin-top: 0;
+}
+.per_essential_information .sr_margin_top15{
+	margin-bottom: 15px;
+}
+.car_intention_objective h5{
+	margin-bottom: 10px;
+}
+#layui-laydate7 i:hover{
+	color:rgba(97, 108, 255, 1);
+}

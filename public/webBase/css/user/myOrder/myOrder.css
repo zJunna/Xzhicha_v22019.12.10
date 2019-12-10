@@ -1,0 +1,2 @@
+/*侧边栏变色*/
+.account_switching .account_li:nth-child(6) a{background-color: #616CFF;color: #ffffff;}

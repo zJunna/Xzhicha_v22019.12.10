@@ -1,0 +1,121 @@
+<!--风险测评-->
+<link rel="stylesheet" type="text/css" href="../../../public/webBase/css/user/myAccount/riskAssessment.css" />
+<!--风险结果样式-->
+<link rel="stylesheet" type="text/css" href="../../../public/webBase/css/user/myAccount/riskAssessmentResults.css" />
+<script src="../../../public/webBase/public/echarts.min.js"></script>
+<script type="text/javascript" src="../../../public/webBase/js/user/myAccount/riskAssessment.js"></script>
+
+<!--风险测评题页面-->
+<!--que是单词question的缩写意思是“题”-->
+<div class="que_risk_assessment_box cf" style="display: block;">
+	<div class="que_risk_question">
+		<h4>信用行为风险测评</h4>
+		<div class="que_risk_question_box">
+			<div id="que_risk_question"></div>
+			<script type="text/html" id="risk_assessment_template">
+				<div class="">
+					{{each data}}
+					<dl class="que_click_option">
+						<dt><span>{{$index}}、</span>{{$value.question.title}}</dt> {{each $value.answers}}
+						<dd class="cf" id="{{$value.id}}">
+							<span class="que_text_redeo fl"></span>
+							<span class="fl que_text">{{$value.option_title}}</span>
+						</dd>
+						{{/each}}
+					</dl>
+					{{/each}}
+				</div>
+			</script>
+			<div class="que_risk_question_btn">
+				提交评测
+			</div>
+		</div>
+	</div>
+</div>
+<div class="que_risk_Pop_ups" style="display:none;">
+	<div class="que_risk_Pop_ups_box">
+		<img src="../../../public/webBase/images/off.png" class="que_risk_Pop_ups_del" />
+		<div class="">
+			<img src="../../../public/webBase/images/public/risk_mark.png" class="que_img" />
+			<p class="que_risk_Pop_ups_txt">请完整回答所有题目后再提交！</p>
+			<p class="que_not_answered">还有<span>3</span>道题未作答 </p>
+
+			<div class="que_risk_Pop_ups_btn">
+				继续作答
+			</div>
+		</div>
+	</div>
+</div>
+<!--风险测评结果页-->
+<!--res是result的缩写，意思是“结果”.inform--报告-->
+<div class="res_risk_results" style="display: none;">
+	<div class="res_risk_report cf">
+		<div id="mmmm"></div>
+		<script type="text/html" id="mmmm_template">
+			<div class="res_risk_report_left fl">
+				<div class="res_left_inform">
+					<h3>风险测评报告</h3>
+					<div class="res_left_inform_img">
+						<img src="" />
+					</div>
+					
+					<dl>
+						<dt class="res_name">{{name}}</dt>
+						<dd>{{num}}</dd>
+					</dl>
+					
+					<p class="res_degree">风险程度</p>
+					<div class="res_risk_degree">
+						<div class="res_risk_degree_box cf">
+							<span class="fl">低</span>
+							<span class="fl">中</span>
+							<span class="fl">高</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</script>
+		<div class="res_risk_report_right fr">
+			<div class="res_risk_report_right_box">
+				<div class="res_suggest cf">
+					<span>建议提升</span>
+					<span><i class="fl">*</i>以下数据仅供您参考</span>
+				</div>
+
+				<div class="res_line_chart" style="width: 410px;height: 212px;">
+					<!--<div id="main" style="width:410px;height:240px;"></div>-->
+					<div id="main2" style="width:440px;height:212px;"></div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="res_risk_steer">
+		<div class="res_risk_steer_box">
+			<div id="res_risk_strength"></div>
+			<script type="text/html" id="res_risk_template">
+				<div class="res_risk_strength">
+					<div class="res_risk_strength_right">
+						<span class="">您的风险程度</span>
+						<span class="res_risk_read">低</span>
+					</div>
+
+					<div class="res_risk_strength_left">
+						<span>{{time}}</span>
+						<span class="res_renew_btn" id="" onclick="again()">重新测评</span>
+					</div>
+
+				</div>
+			</script>
+			<div class="res_pie_chart" style="width:830px;height:240px;">
+
+				<div id="main" style="width:830px;height:240px;">
+				</div>
+			</div>
+
+		</div>
+
+	</div>
